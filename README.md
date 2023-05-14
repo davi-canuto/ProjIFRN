@@ -37,7 +37,6 @@ Uma plataforma que possibilita a comunidade acadêmica compartilhar projetos
 
 # Manual da Desenvolvedor
 
-## Clona o projeto
 1. No terminal do seu computador digite para clonar: `git clone <url do repositório>`
 2. Verifique se python está instalado na sua máquina: `python --version`
 3. Entre no diretório que clonou o repositório: `cd <caminho do diretório>`
