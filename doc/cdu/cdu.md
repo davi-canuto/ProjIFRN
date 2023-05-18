@@ -2,7 +2,7 @@
 
 ## 1. Diagrama de Casos de Uso
 
-![Digrama de casos de uso](diagrama/Diagrama_CDU.png)
+![Digrama de casos de uso](img/diagrama.png)
 
 ## 2. Listagem dos detalhamentos dos casos de uso
 
@@ -14,7 +14,8 @@
 6. [CDU-007 - Logout](cdu-007/detalhamento-007.md)
 7. [CDU-008 - Gerenciar perfil](cdu-008/detalhamento-008.md)
 8. [CDU-010 - Gerenciar projeto](cdu-010/detalhamento-010.md)
-9. [CDU-012 - Definir gerente](cdu-012/detalhamento-012.md)
-10. [CDU-013 - Gerenciar categoria](cdu-013/detalhamento-013.md)
-11. [CDU-014 - Gerenciar usuário](cdu-014/detalhamento-014.md)
-12. [CDU-015 - Adicionar administrador](cdu-015/detalhamento-015.md)
+9. [CDU-011 - Definir equipe](cdu-011/detalhamento-011.md)
+10. [CDU-012 - Definir gerente](cdu-012/detalhamento-012.md)
+11. [CDU-013 - Gerenciar categoria](cdu-013/detalhamento-013.md)
+12. [CDU-014 - Gerenciar usuário](cdu-014/detalhamento-014.md)
+13. [CDU-015 - Adicionar administrador](cdu-015/detalhamento-015.md)
