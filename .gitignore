@@ -8,8 +8,8 @@
 __pycache__/
 local_settings.py
 # Enquanto estivermos trabalhando com SQLite o banco pode ser versionado
-# db.sqlite3
-# db.sqlite3-journal
+db.sqlite3
+db.sqlite3-journal
 media
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -141,7 +141,7 @@ ENV/
 env.bak/
 venv.bak/
 
-virtualevn
+virtualevn/
 
 # Spyder project settings
 .spyderproject
@@ -177,5 +177,4 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/django
 
 
-db.sqlite3
 
