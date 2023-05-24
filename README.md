@@ -37,11 +37,32 @@ Uma plataforma que possibilita a comunidade acadêmica compartilhar projetos
 
 # Manual da Desenvolvedor
 
-1. No terminal do seu computador digite para clonar: `git clone <url do repositório>`
-2. Verifique se python está instalado na sua máquina: `python --version`
-3. Entre no diretório que clonou o repositório: `cd <caminho do diretório>`
-4. Crie um ambiente virutal: `python -m venv venv`
-5. Ative o ambiente virtual: **windows** - `venv\Scripts\activate` , **linux/mac** - `source venv/bin/activate`
-6. Crie o banco de dados: `python manage.py migrate`
-7. (Opcional) Crie um superusuário: `python manage.py createsuperuser`
-8. Inicie o servidor: `python manage.py runserver`
+No terminal do seu computador digite para clonar:
+- `git clone <url do repositório>`
+
+Verifique se python está instalado na sua máquina:
+- `python --version`
+
+Entre no diretório que clonou o repositório:
+- `cd <caminho do diretório>`
+
+Crie um ambiente virutal:
+- `python -m venv venv`
+
+Ative o ambiente virtual:
+- **windows:** - `venv\Scripts\activate`
+- **linux/mac:** - `source venv/bin/activate`
+
+Instale as dependências: 
+- `pip install django` 
+- `pip install django-summernote`
+- `pip install pillow`
+
+Crie o banco de dados:
+- `python manage.py migrate`
+
+(Opcional) Crie um superusuário:
+- `python manage.py createsuperuser`
+
+Inicie o servidor: 
+- `python manage.py runserver`
