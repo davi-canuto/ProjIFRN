@@ -1,3 +1,4 @@
+from ast import keyword
 from django.db import models
 from django_summernote.fields import SummernoteTextField
 from django.contrib.auth.models import User
@@ -7,6 +8,8 @@ class Category(models.Model):
    name = models.CharField(max_length=65)
    description = models.CharField(max_length=150, null=True, blank=True, default=' ')
 
+class Keyword(models.Model):
+   name = models.CharField(max_length=50)
 
 class Project(models.Model):
    logo = models.ImageField(upload_to='proj/img/%Y/%m/%d/', blank=True, default=' ')
@@ -15,11 +18,8 @@ class Project(models.Model):
    date_create = models.DateField(auto_now_add=True)
    content = SummernoteTextField()
    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, default=None)
+   keyword = models.ManyToManyField(Keyword)
 
-
-class Keyword(models.Model):
-   name = models.CharField(max_length=50)
-   project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
 
 class Involvement(models.Model):
