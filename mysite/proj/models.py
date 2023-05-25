@@ -8,11 +8,19 @@ class Category(models.Model):
    name = models.CharField(max_length=65)
    description = models.CharField(max_length=150, null=True, blank=True, default=' ')
 
+   def __str__(self):
+      return f"{self.id} - {self.name}"
+
+
 class Keyword(models.Model):
    name = models.CharField(max_length=50)
+   
+   def __str__(self):
+      return f"{self.id} - {self.name}"
+
 
 class Project(models.Model):
-   logo = models.ImageField(upload_to='proj/img/%Y/%m/%d/', blank=True, default=' ')
+   logo = models.ImageField(upload_to='proj/img/%Y/%m/%d/', blank=True, default='')
    title = models.CharField(max_length=65)
    description = models.CharField(max_length=150)
    date_create = models.DateField(auto_now_add=True)
@@ -20,6 +28,8 @@ class Project(models.Model):
    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, default=None)
    keyword = models.ManyToManyField(Keyword)
 
+   def __str__(self):
+      return f"{self.id} - {self.title}"
 
 
 class Involvement(models.Model):
@@ -28,8 +38,14 @@ class Involvement(models.Model):
    user = models.ForeignKey(User, on_delete=models.CASCADE)
    project = models.ForeignKey(Project, on_delete=models.CASCADE, null=False, default=None)
 
+   def __str__(self):
+      return f"{self.id} - {self.user.username}/{self.project.title}"
+
 
 class Function(models.Model):
    name = models.CharField(max_length=50, null=False, blank=False)
    description = models.CharField(max_length=150, null=True, blank=True, default='')
    involt = models.ForeignKey(Involvement, on_delete=models.CASCADE, null=False)
+
+   def __str__(self):
+      return f"{self.id} - {self.name}"
