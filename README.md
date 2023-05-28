@@ -66,3 +66,12 @@ Crie o banco de dados:
 
 Inicie o servidor: 
 - `python manage.py runserver`
+
+
+## Observação
+caso ocorra o erro `TypeError: clean() got an unexpected keyword argument 'styles'` na execução do projeto, significa um ajuste para versões recentes do django-summernote. Siga estes passos:
+
+1. Acesse a pasta do seu ambiente virtual
+2. Siga este caminho: `/lib64/python3.11/site-packages/django_summernote/fields.py`
+3. Aonde tem `return bleach.clean(value, tags=ALLOWED_TAGS, attributes=ATTRIBUTES, styles=STYLES` mude o argumento `styles=STYLES` para `css_sanitizer=STYLES`
+
