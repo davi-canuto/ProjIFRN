@@ -14,6 +14,8 @@ class RegisterProj(forms.ModelForm):
     category = forms.ChoiceField(choices=[])
     keyword = forms.CharField()
     user = forms.ChoiceField(choices=[])
+    function = forms.CharField()
+
     
     class Meta:
         model = Project
@@ -24,6 +26,9 @@ class RegisterProj(forms.ModelForm):
             'title': 'Title',
             'description': 'Description',
             'content': 'Content',
+        }
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 5}),
         }
 
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
+from django.http import Http404
 from .forms import RegisterProj
-from .models import Category
+from .models import Category, User,Involvement, Keyword, Function
 import pdb
 
 
@@ -14,39 +15,61 @@ def register_project(request):
 
 
 def create_project(request):
-    if request.method == 'POST':
-        form = RegisterProj(request.POST, request.FILES)
+    if request.method != 'POST':
+        raise Http404
+    
+    form = RegisterProj(request.POST, request.FILES)
 
-        if form.is_valid():
-            category_id = form.cleaned_data['category']
-            # user_id = form.cleaned_data['user']
-            # logo = form.cleaned_data['logo']
+    if form.is_valid():
+        project = form.save(commit=False)
 
-            category = Category.objects.get(id=category_id)
-            # user = User.objects.get(id=user_id)
+        # Category
+        category_id = form.cleaned_data['category']
+        category = Category.objects.get(id=category_id)
+        project.category = category
+
+        # User
+        user_id = form.cleaned_data['user']
+        user = User.objects.get(id=user_id)
+
+        # Keyword
+        project.save()
+        keyword_list = form.cleaned_data['keyword'].split(',')
+        for k in keyword_list:
+            try:
+                k = k.strip().lower()
+                keyword = Keyword.objects.get(name=k)
+            except Keyword.DoesNotExist:
+                keyword = None
+
+            if keyword == None:
+                keyword = Keyword()
+                keyword.name = k
+                keyword.save()
+                project.keyword.add(keyword)
             
-            project = form.save(commit=False)
-            project.category = category
+        # Logo
+        if 'logo' in request.FILES:
+            project.logo = request.FILES['logo']
+        
+        project.save()
 
-            if 'logo' in request.FILES:
-                project.logo = request.FILES['logo']
+        # Involvement
+        invol = Involvement()
+        invol.project = project
+        invol.user = user
+        invol.save()
 
-            project.save()
-            return redirect('proj:register')
+        # function
+        function = Function()
+        function_name = form.cleaned_data['function']
+        function.name = function_name
+        function.involt = invol
+        function.save()
 
-        form = RegisterProj()
         return redirect('proj:register')
+
+    form = RegisterProj()
+    return redirect('proj:register')
  
-
-def register_img(request):
-    return render(
-        request,
-        'sendimg.html',
-    )
-
-def create_img(request):
-    if request.method == 'POST':
-        img = request.FILES['img']
-
-    pdb.set_trace() 
-    return redirect('proj:registerimg')
+# form.cleaned_data
