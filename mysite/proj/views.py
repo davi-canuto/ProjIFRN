@@ -46,8 +46,9 @@ def create_project(request):
                 keyword = Keyword()
                 keyword.name = k
                 keyword.save()
-                project.keyword.add(keyword)
-            
+            project.keyword.add(keyword)
+           
+
         # Logo
         if 'logo' in request.FILES:
             project.logo = request.FILES['logo']
