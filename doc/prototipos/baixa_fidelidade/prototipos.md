@@ -4,10 +4,10 @@
 Foram realizadas três telas de baixa fidelidades a partir das definições dos casos de usos e o mapa do site
 
 ## Página inicial
-![Page Home](baixa_fidelidade/Home.png)
+![Page Home](Home.png)
 
 ## Página do perfil
-![Page Perfil](baixa_fidelidade/Perfil.png)
+![Page Perfil](Perfil.png)
 
 ## Página do projeto
-![Page projeto](baixa_fidelidade/Projeto.png)
+![Page projeto](Projeto.png)
