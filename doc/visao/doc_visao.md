@@ -65,7 +65,8 @@ O IFRN não tem uma plataforma exclusivo a postagens de projetos
 | F06 | Login | Entra no sistema como usuários autenticado | Necessário |
 | F07 | Logout | Encerra sessão no sistema | Necessário |
 | F08 | Gerenciar perfil |Gerencia as informações do perfil  | Necessário |
-| F10 | Gerenciar projeto | Mantém a integridade de postagens de projeto | Necessário | 
+| F10 | Gerenciar projeto | Mantém a integridade de postagens de projeto | Necessário |
+| F11 | Definir equipe | Define usuários envolvidos no desenvolvimento do projeto | Necessário |
 | F12 | Definir gerente | Permite conta ter permissões de gerente de projeto | Necessário |
 | F13 | Gerenciar categoria | Gerencia Categorias | Necessário |
 | F14 | Gerenciar Usuário | Gerencia usuários cadastrados | Necessário |
