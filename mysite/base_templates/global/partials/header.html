@@ -1,0 +1,12 @@
+{% load static %}
+
+<header>
+    <section class="header">
+        <a href="{% url 'proj:home' %}"><img src="{% static 'global/imgs/logo.svg' %}" alt="Logo ProjIFRN" class="logo"></a>
+        
+        {% include 'global/partials/search.html' %}
+
+        <a href="file:///home/debora/Desktop/TemplatesPDS/perfil.html"><img src="{% static 'global/imgs/User-60.png' %}" alt="User"
+                class="user"></a>
+    </section>
+</header>

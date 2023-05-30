@@ -1,4 +1,3 @@
-from ast import keyword
 from django.db import models
 from django_summernote.fields import SummernoteTextField
 from django.contrib.auth.models import User
@@ -20,11 +19,17 @@ class Keyword(models.Model):
 
 
 class Project(models.Model):
+   STATUS_CHOICES = (
+      ('em_andamento', 'Em Andamento'),
+      ('pausado', 'Pausado'),
+      ('finalizado', 'Finalizado'),
+   )
    logo = models.ImageField(upload_to='proj/img/%Y/%m/%d/', blank=True, default='')
    title = models.CharField(max_length=65)
    description = models.CharField(max_length=150)
    date_create = models.DateField(auto_now_add=True)
    content = SummernoteTextField()
+   status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='em_andamento')
    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, default=None)
    keyword = models.ManyToManyField(Keyword)
 

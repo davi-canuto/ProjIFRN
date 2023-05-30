@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'global/partials/head.html' %}
+        <title>{% block title %}{% endblock title %} | ProjIFRN</title>
+    </head>
+
+    <body>
+        {% include 'global/partials/header.html' %}
+
+
+        {% block main %}{% endblock main %}
+
+    </body>
+</html>

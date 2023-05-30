@@ -1,6 +1,5 @@
 #from django.contrib.auth.models import AbstractUser
 #from django.conf import settings
-from distutils.command.upload import upload
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -10,6 +9,7 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
    user = models.OneToOneField(User, on_delete=models.CASCADE)
    photo = models.ImageField(upload_to='user_profile/img/%Y/%m/%d/', blank=True, default='')
+   biografy = models.CharField(max_length=150, default='', blank=True)
    is_admin = models.BooleanField(default=False)
    is_manager = models.BooleanField(default=False)
    
