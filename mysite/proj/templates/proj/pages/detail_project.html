@@ -1,0 +1,23 @@
+{% extends 'global/base.html' %}
+
+{% block title %}{{project.title}}{% endblock title %}
+
+{% block main %}
+
+<main class="flex row sb">
+
+    <section class="detalhes-projetos flex col">
+        <h1 class="title">{{project.title}}</h1>
+        {{project.content|safe}}
+    </section>
+
+
+    <aside class="equipe">
+        {% for invol in project.involvement_set.all %}
+            {% include 'proj/partials/team.html' %}
+        {% endfor %}
+    </aside>
+</main>
+
+
+{% endblock main %}

@@ -1,0 +1,21 @@
+{% extends 'global/base.html' %}
+
+{% block title %}login {% endblock title %}
+
+{% block main %}
+
+{% block header %}
+    {% block search %}
+    
+    {% endblock search %}
+    {% endblock header %}
+
+
+<main class="main-login center-h center-v flex col" >
+    <form action="{% url 'user_profile:login_create' %}" method="POST" class="flex col login center-v">
+        {% csrf_token %}
+        {% include 'user_profile/partials/form_login.html' %}
+    </form>
+</main>
+
+{% endblock main %}

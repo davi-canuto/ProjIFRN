@@ -1,0 +1,20 @@
+<section class="informacoes-perfil flex row">
+    <img src="{{user.userprofile.photo.url}}" alt="" class="img-perfil">
+    <div class="flex col sb">
+        
+        <h1 class="nome">{{user.username}}</h1>
+        
+        {% if user.userprofile.biografy != '' %}
+            <p class="decricao">{{user.userprofile.biografy}}</p>
+        {% endif %}
+        
+        <div class="contato">
+            {% for media in  user.socialmedia_set.all%}
+                <a href="{{media.url}}" target='_blank'>
+                    <img src="{{media.type_media.icon.url}}" alt="" title="{{media.type_media.name}}">
+                </a>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>

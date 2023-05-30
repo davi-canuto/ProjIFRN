@@ -1,15 +1,45 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from .forms import RegisterProj
-from .models import Category, User,Involvement, Keyword, Function
+from .models import Category, User,Involvement, Keyword, Function,Project
+from django.contrib.auth.decorators import login_required
 import pdb
 
 
+
+
+def home_project(request):
+    em_andamentos = Project.objects.filter(status="em_andamento")
+    pausados = Project.objects.filter(status="pausado")
+    finalizados = Project.objects.filter(status="finalizado")
+    
+    context = {
+        'em_andamentos':em_andamentos,
+        'pausados':pausados,
+        'finalizados':finalizados,
+    }
+    return render(
+        request,
+        'proj/pages/home.html',
+        context,
+    )
+
+
+def detail_project(request, project_id):
+    project = Project.objects.get(id=project_id)
+    context = {'project':project}
+    return render(
+        request,
+        'proj/pages/detail_project.html',
+        context,
+    )
+
+@login_required(login_url='user_profile:login', redirect_field_name='next')
 def register_project(request):
     form = RegisterProj()
     return render(
         request,
-        'testeForm.html',
+        'proj/pages/register_project.html',
         {'form': form, }         
     )
 
@@ -73,4 +103,5 @@ def create_project(request):
     form = RegisterProj()
     return redirect('proj:register')
  
-# form.cleaned_data
+
+

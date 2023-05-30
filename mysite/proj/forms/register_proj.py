@@ -1,7 +1,6 @@
 from django import forms
 from proj.models import Category,Project, User
-#from django.contrib.auth.models import User
-#from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+
 
 
 class RegisterProj(forms.ModelForm):
@@ -9,6 +8,11 @@ class RegisterProj(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['category'].choices = self.get_category_choices()
         self.fields['user'].choices = self.get_user_choices()
+
+        self.fields['category'].widget.attrs['class'] = 'project-category'
+        self.fields['keyword'].widget.attrs['class'] = 'project-keyword'
+        self.fields['user'].widget.attrs['class'] = 'project-user'
+        self.fields['function'].widget.attrs['class'] = 'project-function'
 
     
     category = forms.ChoiceField(choices=[])
@@ -28,7 +32,9 @@ class RegisterProj(forms.ModelForm):
             'content': 'Content',
         }
         widgets = {
-            'description': forms.Textarea(attrs={'rows': 5}),
+            'logo': forms.FileInput(attrs={'class': 'project-logo'}),
+            'title': forms.TextInput(attrs={'class': 'project-title'}),
+            'description': forms.Textarea(attrs={'class': 'project-description', 'rows': 5}),
         }
 
 
