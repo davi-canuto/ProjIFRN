@@ -42,7 +42,6 @@ def login_create(request):
         password = form.cleaned_data.get('password', '')
         authenticate_user = authenticate(username=username, password=password)
         if authenticate_user is not None:
-            messages.success(request, 'Successs')
             login(request, authenticate_user)
             return redirect('proj:home')
         else:

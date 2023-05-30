@@ -1,7 +1,7 @@
 {% load static %}
 
 {% if request.user.is_authenticated %}
-    <a href="#">
+    <a href="{% url 'user_profile:profile' request.user.id%}">
         <img src="{{request.user.userprofile.photo.url}}" alt="User" class="user">
     </a>
 {% else %}
@@ -13,7 +13,7 @@
         <div id="myDropdown" class="dropdown-content">
 
         {% if request.user.is_authenticated %}
-            <a href="#">Criar Projeto</a>
+            <a href="{% url 'proj:register' %}">Criar Projeto</a>
             <a href="{% url 'user_profile:logout' %}">Logout</a>
         {% else %}
             <a href="{% url 'user_profile:login' %}">Login</a>

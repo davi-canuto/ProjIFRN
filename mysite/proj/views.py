@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import Http404
 from .forms import RegisterProj
 from .models import Category, User,Involvement, Keyword, Function,Project
+from django.contrib.auth.decorators import login_required
 import pdb
 
 
@@ -33,12 +34,12 @@ def detail_project(request, project_id):
         context,
     )
 
-
+@login_required(login_url='user_profile:login', redirect_field_name='next')
 def register_project(request):
     form = RegisterProj()
     return render(
         request,
-        'testeForm.html',
+        'proj/pages/register_project.html',
         {'form': form, }         
     )
 
