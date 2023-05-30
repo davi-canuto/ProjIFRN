@@ -8,13 +8,13 @@
             <p class="decricao">{{user.userprofile.biografy}}</p>
         {% endif %}
         
-        {% for media in  user.socialmedia_set.all%}
-            <div class="contato">
+        <div class="contato">
+            {% for media in  user.socialmedia_set.all%}
                 <a href="{{media.url}}" target='_blank'>
                     <img src="{{media.type_media.icon.url}}" alt="" title="{{media.type_media.name}}">
                 </a>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
 
     </div>
 </section>

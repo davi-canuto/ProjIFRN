@@ -6,10 +6,20 @@
     </head>
 
     <body>
-        {% include 'global/partials/header.html' %}
+        {% block header %}
+            {% include 'global/partials/header.html' %}
+        {% endblock header %}
 
 
         {% block main %}{% endblock main %}
 
     </body>
+    <script>
+
+        function toggleDropdown() {
+            var dropdownContent = document.getElementById("myDropdown");
+            dropdownContent.classList.toggle("show");
+          }
+          
+    </script>
 </html>
