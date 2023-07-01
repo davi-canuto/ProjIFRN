@@ -1,13 +1,13 @@
 
 
     <div class="card flex row">
-        <a href="{% url 'proj:detail' project.id %}">
+        <a href="#">
             <img src="{{project.logo.url}}" alt="imagem" class="img-project">
         </a>
 
         <div class="infos flex col">
 
-            <a href="{% url 'proj:detail' project.id %}"><h1 class="titulo-projeto">{{project.title}}</h1></a>
+            <a href="#"><h1 class="titulo-projeto">{{project.title}}</h1></a>
             
             <p class="description-project">{{project.description}}</p>
             

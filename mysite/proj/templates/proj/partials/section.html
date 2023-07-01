@@ -1,0 +1,13 @@
+<section>
+    <div class="flex sb center-v">
+        <h1 class="title" > {{value}} </h1>
+        <a href="#">Ver mais</a>
+    </div>            
+    <div class="projects flex row">
+        {% for project in  projects %}
+            {% if project.status == key %}
+                {% include 'proj/partials/project.html' %}
+            {% endif %}    
+        {% endfor %}
+    </div>
+</section>
