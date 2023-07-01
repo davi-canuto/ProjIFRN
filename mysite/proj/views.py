@@ -1,107 +1,121 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from .forms import RegisterProj
-from .models import Category, User,Involvement, Keyword, Function,Project
+from .models import *
 from django.contrib.auth.decorators import login_required
 import pdb
 
 
-
-
-def home_project(request):
-    em_andamentos = Project.objects.filter(status="em_andamento")
-    pausados = Project.objects.filter(status="pausado")
-    finalizados = Project.objects.filter(status="finalizado")
+def homeProject(request):
+    projects = Project.objects.all()
     
-    context = {
-        'em_andamentos':em_andamentos,
-        'pausados':pausados,
-        'finalizados':finalizados,
-    }
+    context = {'projects': projects, 'status_choices': STATUS_CHOICES }
+    #pdb.set_trace()
     return render(
         request,
         'proj/pages/home.html',
         context,
     )
 
+class ProjectView:
+    def detailProject(request, project_id):
+        project = Project.objects.get(id=project_id)
+        context = {'project':project}
+        return render(
+            request,
+            'proj/pages/detail_project.html',
+            context,
+        )
 
-def detail_project(request, project_id):
-    project = Project.objects.get(id=project_id)
-    context = {'project':project}
-    return render(
-        request,
-        'proj/pages/detail_project.html',
-        context,
-    )
-
-@login_required(login_url='user_profile:login', redirect_field_name='next')
-def register_project(request):
-    form = RegisterProj()
-    return render(
-        request,
-        'proj/pages/register_project.html',
-        {'form': form, }         
-    )
+    @login_required(login_url='user_profile:login', redirect_field_name='next')
+    def registerProject(request):
+        form = RegisterProj()
+        return render(
+            request,
+            'proj/pages/register_project.html',
+            {'form': form, }         
+        )
 
 
-def create_project(request):
-    if request.method != 'POST':
-        raise Http404
-    
-    form = RegisterProj(request.POST, request.FILES)
-
-    if form.is_valid():
-        project = form.save(commit=False)
-
-        # Category
-        category_id = form.cleaned_data['category']
-        category = Category.objects.get(id=category_id)
-        project.category = category
-
-        # User
-        user_id = form.cleaned_data['user']
-        user = User.objects.get(id=user_id)
-
-        # Keyword
-        project.save()
-        keyword_list = form.cleaned_data['keyword'].split(',')
-        for k in keyword_list:
-            try:
-                k = k.strip().lower()
-                keyword = Keyword.objects.get(name=k)
-            except Keyword.DoesNotExist:
-                keyword = None
-
-            if keyword == None:
-                keyword = Keyword()
-                keyword.name = k
-                keyword.save()
-            project.keyword.add(keyword)
-           
-
-        # Logo
-        if 'logo' in request.FILES:
-            project.logo = request.FILES['logo']
+    def saveProject(request):
+        if request.method != 'POST':
+            raise Http404
         
-        project.save()
+        form2 = request.POST
+        form = RegisterProj(request.POST, request.FILES)
 
-        # Involvement
-        invol = Involvement()
-        invol.project = project
-        invol.user = user
-        invol.save()
+        if form.is_valid():
+            project = form.save(commit=False)
 
-        # function
-        function = Function()
-        function_name = form.cleaned_data['function']
-        function.name = function_name
-        function.involt = invol
-        function.save()
+            # Category
+            project.category = CategoryView.searchCategory(request)
 
+            project.save()
+            # Keyword
+            
+            keyword = KeywordView.searchKeyword(request)
+            if keyword == None:
+                keyword = KeywordView.saveKeyword(request)
+            project.keyword.add(keyword)
+
+            # Logo
+            if 'logo' in request.FILES:
+                project.logo = request.FILES['logo']
+            
+            # function
+            function = FunctionView.searchFunction(request)
+            if function == None:
+                function = FunctionView.saveFunction(request)
+
+
+            # Involvement
+            InvolvementView.saveInvolvement(request, project, function)    
+        
+            return redirect('proj:register')
+
+        form = RegisterProj()
         return redirect('proj:register')
-
-    form = RegisterProj()
-    return redirect('proj:register')
  
 
 
+class CategoryView:
+    @staticmethod
+    def searchCategory(request):
+        category_id = request.POST['category']
+        category = Category.objects.filter(id=category_id).first()
+        return category
+    
+
+class KeywordView:
+    @staticmethod
+    def searchKeyword(request):
+        keyword_name = request.POST['keyword'].lower()
+        keyword = Keyword.objects.filter(name=keyword_name).first()
+        return keyword
+    
+    @staticmethod
+    def saveKeyword(request):
+        keyword_name = request.POST['keyword'].lower()
+        return Keyword.objects.create(name=keyword_name)
+    
+
+class InvolvementView:
+    @staticmethod
+    def saveInvolvement(request, project, function):
+        user_id = request.POST['user']
+        user = User.objects.get(id=user_id)
+        involvement = Involvement.objects.create(user=user, project=project, function=function)
+        return involvement
+    
+
+class FunctionView:
+    @staticmethod
+    def searchFunction(request):
+        function_name = request.POST['function'].lower()
+        function = Function.objects.filter(name=function_name).first()
+        return function
+    
+    @staticmethod
+    def saveFunction(request):
+        function_name = request.POST['function'].lower()
+        return Function.objects.create(name=function_name)
