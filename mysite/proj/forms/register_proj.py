@@ -15,10 +15,10 @@ class RegisterProj(forms.ModelForm):
         self.fields['function'].widget.attrs['class'] = 'project-function'
 
     
-    category = forms.ChoiceField(choices=[])
-    keyword = forms.CharField()
-    user = forms.ChoiceField(choices=[])
-    function = forms.CharField()
+    category = forms.ChoiceField(choices=[], label='Categória')
+    keyword = forms.CharField(label='Palavra-chave')
+    user = forms.ChoiceField(choices=[], label='Usuários')
+    function = forms.CharField(label='Função')
 
     
     class Meta:
@@ -27,9 +27,9 @@ class RegisterProj(forms.ModelForm):
 
         labels = {
             'logo': 'Logo',
-            'title': 'Title',
-            'description': 'Description',
-            'content': 'Content',
+            'title': 'Título',
+            'description': 'Descrição',
+            'content': 'Conteúdo',
         }
         widgets = {
             'logo': forms.FileInput(attrs={'class': 'project-logo'}),
