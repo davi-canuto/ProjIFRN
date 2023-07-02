@@ -12,7 +12,7 @@
 
 
 <main class="main-login center-h center-v flex col" >
-    <form action="{% url 'users:login_create' %}" method="POST" class="flex col login center-v">
+    <form action="{% url 'users:authenticate' %}" method="POST" class="flex col login center-v">
         {% csrf_token %}
         {% include 'users/partials/form_login.html' %}
     </form>

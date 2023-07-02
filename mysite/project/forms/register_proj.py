@@ -1,5 +1,5 @@
 from django import forms
-from proj.models import Category,Project, User
+from project.models import Category,Project, User
 
 
 

@@ -33,7 +33,7 @@ class UserView:
         )
 
 
-    def saveUser(request):
+    def authenticateUser(request):
         if request.method != 'POST':
             raise Http404
 
@@ -45,7 +45,7 @@ class UserView:
             authenticate_user = authenticate(username=username, password=password)
             if authenticate_user is not None:
                 login(request, authenticate_user)
-                return redirect('proj:home')
+                return redirect('project:home')
             else:
                 messages.error(request, 'Invalid credentials')
                 return redirect('users:login')
@@ -57,4 +57,4 @@ class UserView:
     @login_required(login_url='users:login', redirect_field_name='next')
     def logoutUser(request):
         logout(request)
-        return redirect('proj:home')
+        return redirect('project:home')

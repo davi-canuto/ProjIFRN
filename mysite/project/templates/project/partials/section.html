@@ -7,7 +7,7 @@
         {% if projects %}
             {% for project in  projects %}
                 {% if project.status == key %}
-                    {% include 'proj/partials/project.html' %}
+                    {% include 'project/partials/project.html' %}
                 {% endif %}    
             {% endfor %}
         {% else %}

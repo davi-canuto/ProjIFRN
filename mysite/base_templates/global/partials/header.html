@@ -2,7 +2,7 @@
 
 <header>
     <section class="header">
-        <a href="{% url 'proj:home' %}"><img src="{% static 'global/imgs/logo.svg' %}" alt="Logo ProjIFRN" class="logo"></a>
+        <a href="{% url 'project:home' %}"><img src="{% static 'global/imgs/logo.svg' %}" alt="Logo ProjIFRN" class="logo"></a>
         
         {% block search %}
             {% include 'global/partials/search.html' %}

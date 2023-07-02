@@ -13,7 +13,7 @@ def homeProject(request):
     #pdb.set_trace()
     return render(
         request,
-        'proj/pages/home.html',
+        'project/pages/home.html',
         context,
     )
 
@@ -23,7 +23,7 @@ class ProjectView:
         context = {'project':project}
         return render(
             request,
-            'proj/pages/detail_project.html',
+            'project/pages/detail_project.html',
             context,
         )
 
@@ -32,7 +32,7 @@ class ProjectView:
         form = RegisterProj()
         return render(
             request,
-            'proj/pages/register_project.html',
+            'project/pages/register_project.html',
             {'form': form, }         
         )
 
@@ -71,10 +71,10 @@ class ProjectView:
             # Involvement
             InvolvementView.saveInvolvement(request, project, function)    
         
-            return redirect('proj:register')
+            return redirect('project:register')
 
         form = RegisterProj()
-        return redirect('proj:register')
+        return redirect('project:register')
  
 
 
