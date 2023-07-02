@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 import pdb
 
 
-class UsersView:
-    def profile_view(request, user_id):
+class UserView:
+    def profileUser(request, user_id):
         user = User.objects.get(id=user_id)
         involvements = user.involvement_set.all()
         
@@ -24,7 +24,7 @@ class UsersView:
         )
 
 
-    def login_view(request):
+    def loginUser(request):
         form = LoginForm()
         return render(
             request,
@@ -33,7 +33,7 @@ class UsersView:
         )
 
 
-    def login_create(request):
+    def saveUser(request):
         if request.method != 'POST':
             raise Http404
 
@@ -55,6 +55,6 @@ class UsersView:
         
 
     @login_required(login_url='users:login', redirect_field_name='next')
-    def logout_view(request):
+    def logoutUser(request):
         logout(request)
         return redirect('proj:home')
