@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
    user = models.OneToOneField(User, on_delete=models.CASCADE)
-   photo = models.ImageField(upload_to='user_profile/img/%Y/%m/%d/', blank=True, default='')
+   photo = models.ImageField(upload_to='users/img/%Y/%m/%d/', blank=True, default='')
    biografy = models.CharField(max_length=150, default='', blank=True)
    is_admin = models.BooleanField(default=False)
    is_manager = models.BooleanField(default=False)
@@ -17,7 +17,7 @@ class UserProfile(models.Model):
        return f"{self.id} - {self.user.username}"   
 
 class TypeMedia(models.Model):
-   icon = models.ImageField(upload_to='user_profile/type_media/', null=False)
+   icon = models.ImageField(upload_to='users/type_media/', null=False)
    name = models.CharField(max_length=50, null=False, blank=False)
    
    def __str__(self):

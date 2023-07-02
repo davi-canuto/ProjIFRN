@@ -27,7 +27,7 @@ class ProjectView:
             context,
         )
 
-    @login_required(login_url='user_profile:login', redirect_field_name='next')
+    @login_required(login_url='users:login', redirect_field_name='next')
     def registerProject(request):
         form = RegisterProj()
         return render(

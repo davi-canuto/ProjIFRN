@@ -4,10 +4,14 @@
         <a href="#">Ver mais</a>
     </div>            
     <div class="projects flex row">
-        {% for project in  projects %}
-            {% if project.status == key %}
-                {% include 'proj/partials/project.html' %}
-            {% endif %}    
-        {% endfor %}
+        {% if projects %}
+            {% for project in  projects %}
+                {% if project.status == key %}
+                    {% include 'proj/partials/project.html' %}
+                {% endif %}    
+            {% endfor %}
+        {% else %}
+         Sem projetos cadastrados
+        {% endif %}
     </div>
 </section>

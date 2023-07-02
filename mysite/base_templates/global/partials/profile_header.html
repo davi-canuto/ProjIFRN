@@ -1,8 +1,8 @@
 {% load static %}
 
 {% if request.user.is_authenticated %}
-    <a href="{% url 'user_profile:profile' request.user.id%}">
-        <img src="{{request.user.userprofile.photo.url}}" alt="User" class="user">
+    <a href="{% url 'users:profile' request.user.id%}">
+        <img src="{{request.user.userprofile.photo.url}}" alt="user photo" class="user">
     </a>
 {% else %}
     <a href="#"><img src="{% static 'global/imgs/User-60.png' %}" alt="User" class="user"></a>
@@ -14,9 +14,9 @@
 
         {% if request.user.is_authenticated %}
             <a href="{% url 'proj:register' %}">Criar Projeto</a>
-            <a href="{% url 'user_profile:logout' %}">Logout</a>
+            <a href="{% url 'users:logout' %}">Logout</a>
         {% else %}
-            <a href="{% url 'user_profile:login' %}">Login</a>
+            <a href="{% url 'users:login' %}">Login</a>
             <a href="#">Criar Conta</a>
         {% endif %}
 
