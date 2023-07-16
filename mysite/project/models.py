@@ -19,7 +19,6 @@ class Keyword(models.Model):
 
 STATUS_CHOICES = (
       ('em_andamento', 'Em Andamento'),
-      ('pausado', 'Pausado'),
       ('finalizado', 'Finalizado'),
    )
 
