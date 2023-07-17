@@ -32,7 +32,7 @@ class RegisterProj(forms.ModelForm):
             'content': 'Conteúdo',
         }
         widgets = {
-            'logo': forms.FileInput(attrs={'class': 'project-logo'}),
+            'logo': forms.FileInput(attrs={'class': 'project-logo', 'hidden': 'true'}),
             'title': forms.TextInput(attrs={'class': 'project-title'}),
             'description': forms.Textarea(attrs={'class': 'project-description', 'rows': 5}),
         }

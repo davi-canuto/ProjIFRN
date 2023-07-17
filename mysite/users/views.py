@@ -12,8 +12,9 @@ class UserView:
     def profileUser(request, user_id):
         user = User.objects.get(id=user_id)
         involvements = user.involvement_set.all()
+        length = involvements.__len__
         
-        context = {'user': user, 'involvements': involvements}
+        context = {'user': user, 'involvements': involvements, 'length': length}
 
         #pdb.set_trace()
 
