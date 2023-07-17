@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,12 +16,6 @@
         {% block main %}{% endblock main %}
 
     </body>
-    <script>
-
-        function toggleDropdown() {
-            var dropdownContent = document.getElementById("myDropdown");
-            dropdownContent.classList.toggle("show");
-          }
-          
-    </script>
+    <script src="{% static 'global/scripts/scripts.js' %}"></script>
 </html>
+

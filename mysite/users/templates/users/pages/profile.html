@@ -1,0 +1,20 @@
+{% extends 'global/base.html' %}
+
+{% block title %}{{user.username}}{% endblock title %}
+
+{% block main %}
+
+<main>
+    {% include 'users/partials/info_user.html' %}
+
+    <div class="projects flex row">
+       
+        {% include 'users/partials/section.html' %}
+   
+    </div>
+
+</main>
+
+
+{% endblock main %}
+
