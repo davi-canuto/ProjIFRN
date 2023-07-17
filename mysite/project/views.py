@@ -7,10 +7,17 @@ import pdb
 
 
 def homeProject(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by('-id')
+    length_fin = projects.filter(status='finalizado').__len__
+    length_and = projects.filter(status='em_andamento').__len__
+
+    context = {
+        'projects': projects,
+        'status_choices': STATUS_CHOICES,
+        'length_fin': length_fin,
+        'length_and': length_and,
+    }
     
-    context = {'projects': projects, 'status_choices': STATUS_CHOICES }
-    #pdb.set_trace()
     return render(
         request,
         'project/pages/home.html',
