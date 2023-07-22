@@ -1,4 +1,4 @@
-# CDU002. Visualizar projeto 
+# CDU002. Acessar projeto 
 
 - **Ator principal**: usuários da plataforma
 - **Atores secundmários**: não existem
