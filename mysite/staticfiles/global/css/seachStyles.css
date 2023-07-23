@@ -1,0 +1,42 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* BARRA DE PESQUISA */
+.pesquisa, #pesquisa-btn {
+    background-color: #FFF;
+    border: none;
+    font-size: 1.2rem;
+    width: 90%;
+    height: 45px;
+    padding: 0 16px;
+    outline: none;
+    border-radius: 20px 0 0 20px;
+
+}
+.filter-btn{
+    background-color: #fff;
+    border: none;
+    width: 5%;
+    
+
+}
+.search-btn{
+    background-color: #fff;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    width: 5%;
+
+}
+.search-btn:hover, .filter-btn:hover{
+    background-color: #eee;
+    cursor: pointer;
+}

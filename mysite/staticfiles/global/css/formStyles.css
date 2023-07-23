@@ -1,0 +1,55 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+  /*Forms Project*/
+
+
+  .form-project{
+    display: flex;
+    flex-direction: column;
+    margin: auto; 
+    background-color: var(--lighter-color);
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.form-project > form > label{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.project-title,
+.project-description,
+.project-category,
+.project-keyword,
+.project-user,
+.project-function
+{
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.project-description {
+    resize: none;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+
+.projec-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}

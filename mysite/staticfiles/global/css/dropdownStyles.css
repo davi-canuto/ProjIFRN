@@ -1,0 +1,78 @@
+
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*dropdown*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+  }
+  
+  .dropbtn {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .dropdown-content-card {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content-card a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content-card a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .show {
+    display: block;
+  }
+  

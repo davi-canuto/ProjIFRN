@@ -1,0 +1,58 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/*header*/
+
+
+.header-profile{
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: solid 1px #CCCCCC;
+}
+
+header {
+    background-color: var(--lighter-color);
+    box-shadow: var(--shadow);
+    width: 100%;
+
+    padding: 1.6rem 0;
+}
+.header {
+    width: 80%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header form{
+    border: solid 1px #CCCCCC;
+    display: flex;
+    align-items: bottom;
+    justify-content: center;
+    border-radius: 20px;
+    width: 60%;
+    position: relative;
+    
+}
+
+
+header .user{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

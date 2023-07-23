@@ -1,0 +1,64 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*cards*/
+
+.link-more{
+    justify-content: end;
+    padding-right: 30px;
+}
+
+.section-project{
+    width: 100%
+}
+
+.projects{
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.card {
+    padding: 20px;
+    margin-right: 15px;
+    border: solid 1px #CCCCCC;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-project {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+.img-project{
+    width: 250px;
+    height: 250px;
+    margin-right: 1rem;
+}
+.description-project {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 117%;
+    text-align: justify;
+}
+
+.infos {
+    max-width: 350px;
+    justify-content: space-between;
+}
+
+.orientador p{
+    font-weight: 600;
+    color: var(--darker-color);
+}

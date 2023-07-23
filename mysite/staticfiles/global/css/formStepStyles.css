@@ -1,0 +1,39 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*Estilos do form de cadastro de projeto*/
+
+.logo-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-input > label{
+    width: 100px;
+    padding: 10px;
+    border: 1px dashed #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
