@@ -41,10 +41,7 @@ p{
     height: 60px;
 
 }
-.participante:first-of-type{
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--darker-color);
-}
+
 .nome-participante, .funcao-participante{
     font-size: 16px;
     font-weight: 600;
@@ -54,4 +51,15 @@ p{
 .funcao-participante{
     color: var(--darker-color);
     font-weight: 500;
+}
+
+
+.orientador-content{
+    justify-content: center;
+    align-items: center;
+}
+
+.orientador-content > svg{
+    color: yellow;
+    margin-left: 10px;
 }
