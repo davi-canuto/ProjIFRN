@@ -44,8 +44,9 @@ class Involvement(models.Model):
    date_start = models.DateTimeField(auto_now_add=True)
    date_finish = models.DateTimeField(default=None, blank=True, null=True)
    user = models.ForeignKey(User, on_delete=models.CASCADE)
+   is_manager = models.BooleanField(default=False)
    project = models.ForeignKey(Project, on_delete=models.CASCADE, null=False, default=None)
-   function = models.ForeignKey(Function, on_delete=models.SET_DEFAULT, default=None)
+   function = models.ForeignKey(Function, on_delete=models.SET_DEFAULT, default=None, null=True, blank=True)
    def __str__(self):
       return f"{self.id} - {self.user.username}/{self.project.title}"
 

@@ -3,6 +3,7 @@ from django.http import Http404
 from .forms import RegisterProj
 from .models import *
 from django.contrib.auth.decorators import login_required
+
 import pdb
 
 
@@ -47,41 +48,60 @@ class ProjectView:
     def saveProject(request):
         if request.method != 'POST':
             raise Http404
-        
-        form2 = request.POST
-        form = RegisterProj(request.POST, request.FILES)
+                
+        #pdb.set_trace()
 
-        if form.is_valid():
-            project = form.save(commit=False)
+        project = Project(
+            logo = request.FILES['logo'],
+            title = request.POST['title'],
+            description = request.POST['description'],
+            content = request.POST['content'],
+        )
 
-            # Category
-            project.category = CategoryView.searchCategory(request)
+        # Category
+        project.category = CategoryView.searchCategory(request)
 
-            project.save()
-            # Keyword
-            
-            keyword = KeywordView.searchKeyword(request)
+        # Keyword
+        project.save()
+        keywords = request.POST.getlist('keyword')
+        for key in keywords:
+            keyword = KeywordView.searchKeyword(key)
             if keyword == None:
-                keyword = KeywordView.saveKeyword(request)
+                keyword = KeywordView.saveKeyword(key)
             project.keyword.add(keyword)
 
-            # Logo
-            if 'logo' in request.FILES:
-                project.logo = request.FILES['logo']
-            
-            # function
-            function = FunctionView.searchFunction(request)
+
+        # Involvement do gerente
+        gerente_id = request.user.id
+        gerente = User.objects.get(id=gerente_id)
+        invol = Involvement(project=project, user=gerente, is_manager=True)
+        invol.save()
+
+
+        # Involvement
+        users_and_function = request.POST.getlist('user_and_function')
+        for string_full in users_and_function:
+            string_break = string_full.split('-')
+            username = string_break[0]
+            function_name = string_break[1]
+            function = FunctionView.saveFunction(function_name)
             if function == None:
-                function = FunctionView.saveFunction(request)
-
-
-            # Involvement
-            InvolvementView.saveInvolvement(request, project, function)    
-        
-            return redirect('project:register')
-
-        form = RegisterProj()
+                keyword = KeywordView.saveKeyword(function_name)
+            InvolvementView.saveInvolvement(project, function, username)    
+    
         return redirect('project:register')
+
+    
+    def deleteProject(request, project_id):
+        project = Project.objects.get(id=project_id)
+        previous_url = request.META.get('HTTP_REFERER')
+        project.delete()
+
+        if previous_url:
+            return redirect(previous_url)
+        else:
+            return redirect('fallback_url_name')
+
  
 
 
@@ -95,34 +115,33 @@ class CategoryView:
 
 class KeywordView:
     @staticmethod
-    def searchKeyword(request):
-        keyword_name = request.POST['keyword'].lower()
+    def searchKeyword(key):
+        keyword_name = key.lower()
         keyword = Keyword.objects.filter(name=keyword_name).first()
         return keyword
     
     @staticmethod
-    def saveKeyword(request):
-        keyword_name = request.POST['keyword'].lower()
+    def saveKeyword(key):
+        keyword_name = key.lower()
         return Keyword.objects.create(name=keyword_name)
     
 
 class InvolvementView:
     @staticmethod
-    def saveInvolvement(request, project, function):
-        user_id = request.POST['user']
-        user = User.objects.get(id=user_id)
+    def saveInvolvement(project, function, username):
+        user = User.objects.get(username=username)
         involvement = Involvement.objects.create(user=user, project=project, function=function)
         return involvement
     
 
 class FunctionView:
     @staticmethod
-    def searchFunction(request):
-        function_name = request.POST['function'].lower()
-        function = Function.objects.filter(name=function_name).first()
-        return function
+    def searchFunction(function_name):
+        function = function_name.lower()
+        function_obj = Function.objects.filter(name=function).first()
+        return function_obj
     
     @staticmethod
-    def saveFunction(request):
-        function_name = request.POST['function'].lower()
-        return Function.objects.create(name=function_name)
+    def saveFunction(function_name):
+        function = function_name.lower()
+        return Function.objects.create(name=function)
