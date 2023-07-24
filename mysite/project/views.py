@@ -48,7 +48,8 @@ class ProjectView:
     def saveProject(request):
         if request.method != 'POST':
             raise Http404
-                
+
+        previous_url = request.META.get('HTTP_REFERER')        
         #pdb.set_trace()
 
         project = Project(
@@ -89,7 +90,10 @@ class ProjectView:
                 keyword = KeywordView.saveKeyword(function_name)
             InvolvementView.saveInvolvement(project, function, username)    
     
-        return redirect('project:register')
+        if previous_url:
+            return redirect(previous_url)
+        else:
+            return redirect('fallback_url_name')
 
     
     def deleteProject(request, project_id):
