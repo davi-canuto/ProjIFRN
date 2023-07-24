@@ -1,0 +1,99 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* MENU - FILTROS */
+.menu ul li{
+    margin: 0 10px;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    position: relative;
+}
+.menu ul li:hover{
+    cursor: pointer;
+}
+.dropdown-content-filter{
+    background-color: var(--darker-color);
+    border-radius: 10px;
+    width: fit-content;
+    padding:0;
+    position: absolute;
+    top: 30px;
+    left: 2px 0;
+    transition-delay: 2s;
+    display: none;
+    z-index: 1;
+}
+.dropdown-content-filter ul li{
+    color: var(--lighter-color);
+    border-bottom: 1px solid var(--lighter-color);
+    padding: 4px;
+}
+.dropdown-content-filter ul li:last-child{
+    border-bottom: none 
+}
+.dropdown-content-filter ul li:hover{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.icon-rotate {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    transition: all .6s;
+  }
+
+
+
+
+/*filter*/
+.filters{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    display: none;
+}
+.filters h1{
+    color: var(--darker-color);
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+.filters h2{
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.filters div:first-child{
+    border-right: solid 1px var(--text-color);
+    padding-right: 1rem;
+    margin-right: 1rem;
+}
+
+.filters label{
+    color: var(--text-color);
+    font-weight: 500;
+}
+.filters label:hover{
+    cursor: pointer;
+}
+
+.show{
+    display: block;
+}

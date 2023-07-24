@@ -1,0 +1,65 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*detalhes*/
+
+.detalhes-projetos{
+    width: 70%;
+}
+
+.logo-projeto{
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+p{
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.imgs-projeto img{
+    margin-right: 1.5rem;
+}
+
+
+.participante{
+    margin: 1.5rem 0;
+}
+
+.participante > a > img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+
+}
+
+.nome-participante, .funcao-participante{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 16px
+}
+.funcao-participante{
+    color: var(--darker-color);
+    font-weight: 500;
+}
+
+
+.orientador-content{
+    justify-content: center;
+    align-items: center;
+}
+
+.orientador-content > svg{
+    color: yellow;
+    margin-left: 10px;
+}

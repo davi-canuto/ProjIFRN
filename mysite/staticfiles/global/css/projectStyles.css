@@ -1,0 +1,20 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.equipe{
+    width: 25%;
+    height: fit-content;
+    background-color: var(--lighter-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 0.6rem 1rem;
+}

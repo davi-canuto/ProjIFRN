@@ -1,0 +1,206 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+  /*Forms Project*/
+
+
+  .form-project{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    margin: auto; 
+    align-items: center;
+    border-radius: 10px;
+}
+
+.form-project > form > label{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.project-title,
+.project-description,
+.project-category,
+.project-keyword,
+.project-user,
+.project-function
+{
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.project-description {
+    resize: none;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+
+.projec-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+
+.logo-title{
+    align-items: center;
+    justify-content: space-around;   
+}
+
+.logo-title > .logo-project{
+    margin-right: 70px;
+}
+
+#title{
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: gray 1px solid;
+}
+
+.description{
+    margin-top: 30px;
+    justify-content: center;
+    
+}
+
+#description{
+    border: gray 1px solid;
+    border-radius: 4px;
+    padding: 10px;
+    height: 100px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.keyword{
+    margin-top: 10px;
+}
+
+#keywords{
+    flex-wrap: wrap;
+    width: 100px;
+}
+
+.keyword-input{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.button-add-keyword-plus > svg{
+    cursor: pointer;
+    color: gray;
+}
+
+.button-add-keyword-plus > svg:hover{
+    color: black;
+}
+
+
+#id_category{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    color: gray;
+}
+
+.butto-next{
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: space-between;
+
+}
+
+.butto-next > button{
+    background-color: var(--lighter-color);
+    cursor: pointer;
+    border-radius: 5px;
+    border: #808080 1px solid;
+    padding: 10px;
+    width: 200px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.butto-next > button:hover{
+    background-color: var(--main-color);
+}
+
+
+#id_user{
+    color: gray;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 600px;
+    padding: 10px;
+}
+
+#nameFunc{
+    padding: 10px;
+    width: 600px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#users{
+    justify-content: center;
+    align-items: center;
+}
+
+.user-func-box{
+    width: 600px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    
+}
+
+.div-user{
+    border-radius: 5px;
+    width: 50%;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+.div-function{
+    border-radius: 5px;
+    width: 50%;
+    padding: 5px;
+    border: 1px solid gray;
+}
+
+.butto-add{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butto-add > button{
+    width: 100px;
+    padding: 5px 10px;
+
+}
+
+#btn-submete-project{
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+#btn-submete-project:hover{
+
+}

@@ -9,10 +9,12 @@ class RegisterProj(forms.ModelForm):
         self.fields['category'].choices = self.get_category_choices()
         self.fields['user'].choices = self.get_user_choices()
 
-        self.fields['category'].widget.attrs['class'] = 'project-category'
+        self.fields['category'].widget.attrs['class'] = ''
         self.fields['keyword'].widget.attrs['class'] = 'project-keyword'
-        self.fields['user'].widget.attrs['class'] = 'project-user'
-        self.fields['function'].widget.attrs['class'] = 'project-function'
+        self.fields['user'].widget.attrs['class'] = 'user_choice'
+        self.fields['function'].widget.attrs['class'] = ''
+
+        self.fields['user'].widget.attrs['id'] = 'id_user'
 
     
     category = forms.ChoiceField(choices=[], label='Categória')
@@ -45,5 +47,5 @@ class RegisterProj(forms.ModelForm):
     
     def get_user_choices(self):
         users = User.objects.all()
-        choices = [(user.id, user.username) for user in users]
+        choices = [(user.username, user.username) for user in users]
         return choices

@@ -17,7 +17,12 @@
         <div id="myDropdown" class="dropdown-content">
 
         {% if request.user.is_authenticated %}
+            {% if request.user.userprofile.is_manager %}
+            
             <a href="{% url 'project:register' %}">Criar Projeto</a>
+            
+            {% endif %}
+
             <a href="{% url 'users:logout' %}">Logout</a>
         {% else %}
             <a href="{% url 'users:login' %}">Login</a>

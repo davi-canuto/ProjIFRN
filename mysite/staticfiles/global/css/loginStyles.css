@@ -1,0 +1,62 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap');
+
+:root{
+    --lighter-color:#F3F3F3;
+    --darker-color: #4e4e3c;
+    --main-color: #11BE6B;
+    --text-color: #626262;
+
+    --shadow:0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*login*/
+
+.main-login{
+    height: 100vh;
+    margin-top: 0;
+}
+.login {
+    background-color: var(--lighter-color);
+    border-radius: 20px;
+    padding: 5%;
+    box-shadow: var(--shadow);
+    width: 30%;
+}
+.login .title{
+    font-size: 24px;
+}
+.logo-login{
+    width: 250px;
+}
+.login-btn{
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: none;
+    padding: 10px 34px;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+   margin-top: 24px;
+   margin-bottom: 12px;
+}
+.form-field{
+    width: 100%;
+    margin: 10px 0;
+}
+.form-field input{
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.form-field label{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.login small a{
+    font-weight: 600;
+}
