@@ -1,0 +1,25 @@
+
+<a href="{% url 'project:home' %}"><img src="/static/global/imgs/logo.svg" class="logo-login" alt=""></a>
+
+<h1 class="title">ENTRAR</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="message {{message.tags}}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="form-field flex col">
+    <label for="id_username">Usuário</label>
+    {{form.username}}
+</div>
+<div class="form-field flex col">
+    <label for="id_password">Senha</label>
+    {{form.password}}
+</div>
+
+<button class="login-btn" >Entrar</button>
+
+<small>Ainda não tem cadastro? <a href="#"> Cadastre-se Aqui!</a></small>

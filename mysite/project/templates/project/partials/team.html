@@ -1,0 +1,17 @@
+
+<div class="participante flex row center-v">
+    
+    <a href="{% url 'users:profile' invol.user.id%}">
+        <img src="{{invol.user.userprofile.photo.url}}" alt="">
+    </a>
+
+    <div class="infos-ser">
+        <a href="{% url 'users:profile' invol.user.id%}">
+            <p class="nome-participante">{{invol.user.username}}</p>
+        </a>
+        {% for func in invol.function_set.all %}
+            <p class="funcao-participante">{{func.name}}</p>
+        {% endfor %}
+    </div>
+
+</div>

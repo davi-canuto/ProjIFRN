@@ -1,0 +1,80 @@
+<section class="section-project">
+    <div class="flex sb center-v">
+        <h1 class="title" > Em andamento </h1>
+    </div>
+
+    <div class="projectRow" > 
+        
+        <div class="projectRow--left" onClick="leftAnd()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </div>
+
+        <div class="projectRow--right" onClick="rightAnd({{length_and}})">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+        </div>
+        
+        
+
+        <div class="projectRow--listarea">
+
+            <div id="id_andamento" class="projects flex row projectRow--list">
+                {% if projects %}
+                    {% for project in  projects %}
+                        {% if project.status == 'em_andamento' %}
+                            {% include 'project/partials/project.html' %}
+                        {% endif %}    
+                    {% endfor %}
+                {% else %}
+                Sem projetos cadastrados
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<section class="section-project">
+    <div class="flex sb center-v">
+        <h1 class="title" > Finalizado </h1>
+    </div>
+
+    <div class="projectRow" > 
+        
+        <div class="projectRow--left" onClick="leftFin()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+        </div>
+
+        <div class="projectRow--right" onClick="rightFin({{length_fin}})">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+        </div>
+        
+        
+
+        <div class="projectRow--listarea">
+
+            <div id="id_finalizado" class="projects flex row projectRow--list">
+                {% if projects %}
+                    {% for project in  projects %}
+                        {% if project.status == 'finalizado' %}
+                            {% include 'project/partials/project.html' %}
+                        {% endif %}    
+                    {% endfor %}
+                {% else %}
+                Sem projetos cadastrados
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+</section>

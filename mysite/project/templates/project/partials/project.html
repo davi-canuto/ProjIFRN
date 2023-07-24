@@ -1,0 +1,27 @@
+
+
+    <div class="card flex row projectRow--item">
+        <a href="{% url 'project:detail' project.id %}">
+            <img src="{{project.logo.url}}" alt="imagem" class="img-project">
+        </a>
+
+        <div class="infos flex col">
+
+            <a href="{% url 'project:detail' project.id %}"><h1 class="titulo-projeto">{{project.title}}</h1></a>
+            
+            <p class="description-project">{{project.description}}</p>
+            
+            <div class="orientador flex"> <span class="material-symbols-outlined"> person </span>
+                <p> Hortevan Marrocos Frutuoso </p>
+            </div>
+            
+            <div class="tags">
+                <a class="tag" href="#">{{project.category.name}}</a>
+                <a class="tag" href="#">{{project.date_create}}</a>
+
+            </div>
+        
+        </div>
+    </div>
+
+    
