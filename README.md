@@ -7,16 +7,16 @@ Uma plataforma que possibilita a comunidade acadêmica compartilhar projetos
 # Equipe e Formas de Contato
 
 1. Antônio Fernandes da Cruz Junior
-2. Debora Lavínia da Silva Melo
-3. Lucas Nithael Silva de Souza
-4. Vinicius Vasconcelos Ferreira Soares
+2. Davi Alessandro Canuto da Silva Gregório
+3. Debora Lavínia da Silva Melo
+4. Neemias Renan Santos de Oliveira
 5. Wagner Amadeus Galvão de Souza
 
 # Contatos
 1. cruz.junior@escolar.ifrn.edu.br
-2. melo.debora@escolar.ifrn.edu.br
-3. lucas.nithael@escolar.ifrn.edu.br
-4. soares.vinicius@escolar.ifrn.edu.br
+2. davi.gregorio@escolar.ifrn.edu.br
+3. melo.debora@escolar.ifrn.edu.br
+4. neemias.renan@escolar.ifrn.edu.br
 5. amadeus.galvao@escolar.ifrn.edu.br
 
 # Horário de Reuniões
@@ -26,7 +26,8 @@ Uma plataforma que possibilita a comunidade acadêmica compartilhar projetos
 
 # Tecnologias Utilizadas
 
-- Python
+- Node
+- Vue.js
 - LucidChart
 - VsCode
 - Word
