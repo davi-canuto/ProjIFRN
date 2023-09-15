@@ -45,7 +45,7 @@
    </td>
   </tr>
   <tr>
-   <td>14/09/2023
+   <td>15/09/2023
    </td>
    <td>2.0
    </td>
@@ -59,43 +59,40 @@
 
 **1. Objetivo do Projeto**
 
-O ProjIFRN tem como objetivo principal disponibilizar uma plataforma para a comunidade acadêmica do curso de TADS da Instituição Federal do Rio Grande do Norte (IFRN) onde seja possível realizar postagens de projetos desenvolvidos na instituição.
+O ProjIFRN tem como objetivo principal disponibilizar uma plataforma web para a comunidade acadêmica do curso de TADS (Tecnologia em Análise e Desenvolvimento de Sistemas) do Instituto Federal do Rio Grande do Norte (IFRN). Essa plataforma será destinada aos discentes e docentes do curso, com o propósito de permitir a postagem e divulgação de projetos de desenvolvimento web desenvolvidos pelos discentes do curso e supervisionados e orientados pelos docentes do curso, relacionados às disciplinas de Projeto de Desenvolvimento de Sistemas Web, Projeto de Desenvolvimento de Sistemas Distribuídos e Projeto de Desenvolvimento de Sistemas Corporativos. Os projetos desenvolvidos e postados na plataforma ProjIFRN abordarão assuntos e temas diversos, proporcionando um espaço flexível e aberto para a exploração de uma ampla gama de trabalhos já realizados e em andamento pelos alunos do curso, todos relacionados ao desenvolvimento de sistemas web.
 
 **2. Descrição do Problema**
 
-O IFRN enfrenta um desafio relacionado à descentralização de informações sobre os projetos desenvolvidos, o que afeta tanto a comunidade acadêmica quanto o público externo. A falta de uma plataforma dedicada para postagens, divulgação e gerenciamento de projetos resulta em falta de visibilidade, dificuldades na divulgação e na gestão adequada desses projetos.
-
+O curso de TADS enfrenta um desafio crítico relacionado à ausência de uma plataforma web dedicada para postagens, divulgação e gerenciamento de projetos desenvolvidos pelos discentes durante as disciplinas de desenvolvimento de projetos do curso. Essa lacuna tem um impacto significativo na falta de visibilidade para a comunidade acadêmica interessada, incluindo discentes, docentes e público externo. A falta de um sistema centralizado dificulta a divulgação eficaz e a gestão adequada desses projetos, resultando em uma perda de oportunidades de colaboração e compartilhamento de conhecimento.
 
 <table>
   <tr>
    <td><strong>Problema</strong>
    </td>
-   <td>Descentralização de Projetos
+   <td>Ausência de uma plataforma web dedicada para postagens, divulgação e gerenciamento de projetos desenvolvidos por discentes.
    </td>
   </tr>
   <tr>
    <td><strong>Afeta</strong>
    </td>
-   <td>Comunidade acadêmica e externo
+   <td>Comunidade acadêmica do curso de TADS. Público externo interessado.
    </td>
   </tr>
   <tr>
    <td><strong>Impacta</strong>
    </td>
-   <td>Falta de visibilidade, divulgação e gerência de projetos
+   <td>Falta de visibilidade dos projetos. Dificuldades na divulgação. Gestão ineficaz de projetos.
    </td>
   </tr>
   <tr>
    <td><strong>Solução</strong>
    </td>
-   <td>Plataforma dedicada a postagens, divulgação e gerenciamento de projetos
+   <td>Desenvolvimento de uma plataforma dedicada para postagens, divulgação e gerenciamento de projetos de desenvolvimento de sistemas.
    </td>
   </tr>
 </table>
 
-
 **3. Descrição dos Usuários**
-
 
 <table>
   <tr>
@@ -112,10 +109,8 @@ O IFRN enfrenta um desafio relacionado à descentralização de informações so
    <td>Gerencia os dados de um projeto.
    </td>
    <td>- Criar projeto.
-<p>
-- Criar equipe.
-<p>
-- Editar projeto quando necessário.
+<p> - Criar equipe.
+<p> - Editar projeto quando necessário.
    </td>
   </tr>
   <tr>
@@ -134,29 +129,54 @@ O IFRN enfrenta um desafio relacionado à descentralização de informações so
 
 **4. Descrição do Ambiente dos Usuários**
 
-Qualquer usuário poderá acessar a plataforma ProjIFRN por meio de um dispositivo com acesso à internet. Os usuários com permissões de gerente terão o privilégio de cadastrar projetos no sistema.
+O ambiente dos usuários da plataforma ProjIFRN é acessível a qualquer usuário por meio de um dispositivo com acesso à internet e a utilização de um navegador (browser). Os usuários são divididos em dois tipos principais:
+
+<strong>Gerente de Projeto (docentes)</strong>:
+O Gerente de Projeto é responsável por gerenciar os dados de um projeto na plataforma ProjIFRN. Suas responsabilidades incluem:
+<ol type="i">
+<li>Criar, editar, atualizar e excluir projetos quando necessário;</li>
+<li>Criar equipes de projeto;</li>
+<li>Adicionar membros (discentes) às equipes de projeto.</li>
+</ol>
+
+<strong>Usuário (discentes)</strong>:
+Os Usuários são indivíduos sem privilégios de autenticação específicos na plataforma. Suas responsabilidades se concentram em:
+<ol type="i">
+<li>Acessar informações públicas de projetos disponíveis na plataforma;</li>
+<li>Realizar pesquisas sobre projetos existentes.</li>
+</ol>
+
+Apenas os Gerentes de Projeto (docentes) têm o privilégio adicional de cadastrar novos projetos no sistema.
 
 **5. Principais Necessidades dos Usuários**
 
-* Discentes do curso de TADS precisam de uma plataforma que centralize os projetos de PDS (Projeto de Desenvolvimento de Sistema), criando um histórico de participação em desenvolvimento de projetos e uma página simplificada com essas informações.
-* Criar um Website que sirva de portfólio para demosntração de PDS para os discentes ingressantes na disciplina.
-* Criar uma plaforma que forneça exemplares de projetos finalizados e em andamento para formentação de novas ideias e continuação de projetos órfãos.
+<p> Os discentes do curso de TADS apresentam diversas necessidades específicas que a plataforma ProjIFRN visa atender de forma abrangente e eficaz:</p> 
+
+<strong> Criação de um Website de Portfólio:</strong> 
+<ol type="i">
+<li> Há uma necessidade de criar um website que sirva como portfólio para as disciplinas de desenvolvimento (web, distribuido e corporativo), possibilitando a demonstração de projetos de desenvolvimento de sistemas para discentes ingressantes nas disciplinas de desenvolvimento;</li> 
+<li> Esse portfólio é essencial para apresentar as habilidades e conquistas anteriores dos discentes, promovendo uma maior interação e colaboração entre as gerações de estudantes.</li> 
+</ol>
+
+<strong> Acesso a Exemplares de Projetos:</strong> 
+<ol type="i">
+<li> Os discentes desejam uma plataforma que forneça acesso a exemplares de projetos finalizados e em andamento;</li> 
+<li> Essa funcionalidade é crucial para a formação de novas ideias e a continuação de projetos "órfãos," incentivando a inovação e o desenvolvimento contínuo.</li> 
+</ol>
+
+<p> A plataforma ProjIFRN busca atender a essas necessidades, proporcionando aos discentes um ambiente centralizado e acessível para explorar, compartilhar e colaborar em projetos de desenvolvimento de sistemas (web, distribuido e corporativo), além de fortalecer a comunidade acadêmica do curso de TADS. </p>
 
 **6. Alternativas Concorrentes**
 
-**GitHub **- Plataforma de versionamento de projetos com diversas funcionalidades.
-
-* **Pontos Positivos:** Colaboração em projetos públicos.
-* **Pontos Negativos**: Confuso para usuários não familiarizados com tecnologia.
-
-**Portal IFRN **- Plataforma dedicada a informações dos campi do IFRN, incluindo projetos e pesquisas.
-
-* **Pontos Positivos**: Informações sobre toda a instituição.
-* **Pontos Negativos**: Dificuldade de acesso rápido aos projetos devido à diversidade de informações.
+A plataforma ProjIFRN, atualmente em desenvolvimento, destaca-se por sua singularidade na comunidade de TADS. Ao analisar o cenário, observamos que ProjIFRN não enfrenta concorrentes diretos ou alternativas comparáveis no mercado acadêmico.
+Esta ausência de concorrência é um reflexo da inovação e do comprometimento em atender às necessidades específicas dos discentes e docentes do curso de TADS do IFRN. A plataforma ProjIFRN foi concebida com o intuito de preencher uma lacuna crucial na descentralização de projetos, proporcionando um ambiente centralizado para postagem, divulgação e gerenciamento de projetos de desenvolvimento web.
+Essa singularidade posiciona a ProjIFRN como uma solução inovadora e sob medida para a comunidade de TADS; compartilhando conhecimento, experiências e impulsionando o progresso no desenvolvimento de sistemas.
 
 **7. Visão Geral do Produto**
 
-O ProjIFRN será uma plataforma focada na comunidade acadêmica de TADS do IFRN, permitindo que orientadores realizem o upload de informações detalhadas sobre projetos. Isso proporcionará uma apresentação objetiva dos projetos para o público interessado. A plataforma terá uma interface de fácil navegação, garantindo acesso rápido e seguro às informações desejadas.
+O ProjIFRN é uma plataforma web, em desenvolvimento, sob medida para atender às necessidades da vibrante comunidade acadêmica do curso de TADS no IFRN. Este produto visa simplificar e aprimorar a gestão de projetos acadêmicos; desenvolvimento de sistemas web, permitindo que orientadores e discentes compartilhem informações detalhadas e relevantes sobre seus projetos.
+Com uma abordagem centrada no usuário, o ProjIFRN oferece uma experiência intuitiva e eficiente. Os orientadores terão a capacidade de realizar o upload de informações detalhadas sobre projetos, proporcionando uma apresentação objetiva e informativa para o público acadêmico e externo interessado. Isso não apenas simplifica a divulgação de projetos, mas também promove a colaboração, permitindo que outros discentes e docentes se envolvam e se inspirem por meio de projetos já realizados ou em andamento.
+A plataforma será dotada de uma interface de fácil navegação, garantindo que todos os usuários tenham acesso rápido e confiável às informações desejadas. Isso tornará a exploração e o compartilhamento de projetos uma tarefa simples e agradável, incentivando a disseminação do conhecimento e o fortalecimento da comunidade acadêmica de TADS no IFRN.
 
 **8. Requisitos Funcionais**
 
@@ -310,7 +330,43 @@ O ProjIFRN será uma plataforma focada na comunidade acadêmica de TADS do IFRN,
    <td>Necessário
    </td>
   </tr>
+   <tr>
+   <td>NF06
+   </td>
+   <td>Desempenho
+   </td>
+   <td>Tempo de carregamento das páginas
+   </td>
+   <td>Desempenho
+   </td>
+   <td>Importante
+   </td>
+  </tr>
+   <tr>
+   <td>NF07
+   </td>
+   <td>Escalabilidade
+   </td>
+   <td>Capacidade de lidar com um grande número de projetos
+   </td>
+   <td>Escalabilidade
+   </td>
+   <td>Importante
+   </td>
+  </tr>
+   <tr>
+   <td>NF08
+   </td>
+   <td>Conformidade com Padrões
+   </td>
+   <td>Adesão a padrões de acessibilidade web
+   </td>
+   <td>Visão
+   </td>
+   <td>Importante
+   </td>
+  </tr>  
 </table>
 
 
-Este documento de visão define os objetivos, requisitos e contexto geral do projeto ProjIFRN, proporcionando uma visão clara do que está sendo desenvolvido e como atenderá às necessidades dos usuários.
+<p>Este documento de visão estabelece os objetivos, requisitos e contexto abrangente do projeto ProjIFRN, fornecendo uma visão clara do que está sendo desenvolvido e de como irá atender às necessidades dos usuários.</p>
