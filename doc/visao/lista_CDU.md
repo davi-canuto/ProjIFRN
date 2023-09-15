@@ -1,5 +1,5 @@
-#Casos de uso
-Listagem dos casos de uso por ordem de prioridade.
+# Casos de uso
+**Listagem dos casos de uso por ordem de prioridade.**
 
 <ul>
     <li>Pesquisar Projeto: Listar projetos de acordo com critérios de busca (Necessário).</li>
