@@ -1,67 +1,92 @@
+![Logo ProjIFRN](doc/imagens/mockup.png)
+
 # ProjIFRN
+ProjIFRN é uma plataforma que facilita o compartilhamento de projetos na comunidade acadêmica.
 
-<img src="logo.png" width="200" height="200" />
+## 👥 Equipe e Contatos
 
-Uma plataforma que possibilita a comunidade acadêmica compartilhar projetos
+1. Antônio Fernandes da Cruz Junior - cruz.junior@escolar.ifrn.edu.br
+2. Davi Alessandro Canuto da Silva Gregório - davi.gregorio@escolar.ifrn.edu.br
+3. Debora Lavínia da Silva Melo - melo.debora@escolar.ifrn.edu.br
+4. Neemias Renan Santos de Oliveira - neemias.renan@escolar.ifrn.edu.br
+5. Wagner Amadeus Galvão de Souza - amadeus.galvao@escolar.ifrn.edu.br
 
-# Equipe e Formas de Contato
+## 📅 Horário de Reuniões
 
-1. Antônio Fernandes da Cruz Junior
-2. Davi Alessandro Canuto da Silva Gregório
-3. Debora Lavínia da Silva Melo
-4. Neemias Renan Santos de Oliveira
-5. Wagner Amadeus Galvão de Souza
+- **Quartas-feiras:** Reunião com o orientador no campus.
+- **Segundas-feiras, Sextas-feiras e Sábados:** Reunião da equipe no Discord.
 
-# Contatos
-1. cruz.junior@escolar.ifrn.edu.br
-2. davi.gregorio@escolar.ifrn.edu.br
-3. melo.debora@escolar.ifrn.edu.br
-4. neemias.renan@escolar.ifrn.edu.br
-5. amadeus.galvao@escolar.ifrn.edu.br
+## 🛠️ Tecnologias e Ferramentas Utilizadas
 
-# Horário de Reuniões
+- **Node:** Ambiente de execução para JavaScript do lado do servidor.
+- **Vue.js:** Framework progressivo para construção de interfaces de usuário.
+- **LucidChart e Astah:** Ferramentas de criação de diagramas e fluxogramas.
+- **VsCode:** Editor de código-fonte altamente configurável.
 
-- **Quartas-feiras:** reunião com o orientador no campus
-- **Segundas-feiras, Sextas-feiras e Sábados:** reunião da equipe no discord 
+## 📚 Documentação
 
-# Tecnologias Utilizadas
+1. [Documento de visão](doc/visao/doc-visao.md)
+2. [Mapa do site](doc/mapa-site/mapa-site.md)
+3. [Protótipos de interface com o usuário](doc/prototipos/prototipos.md)
+4. [Modelo de Domínio](doc/dominio/dominio.md)
+5. [Modelo de casos de uso](doc/cdu/cdu.md)
+6. [Glossário](doc/visao/glossario.md)
+7. [Prioridades dos Casos de Uso](doc/visao/lista_CDU.md)
 
-- Node
-- Vue.js
-- LucidChart
-- VsCode
-- Word
+## 🛠️ Manual do Desenvolvedor
 
-# Documentação
+Para começar a contribuir com o projeto, siga os passos abaixo:
 
-[Link para os documentos do projeto](doc/documentacao.md)
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/tads-cnat/ProjIFRN.git
+   ```
 
-# Manual da Desenvolvedor
+2. Verifique se o Python está instalado em sua máquina:
+   ```bash
+   python --version
+   ```
 
-No terminal do seu computador digite para clonar:
-- `git clone <url do repositório>`
+3. Navegue até o diretório clonado:
+   ```bash
+   cd ProjIFRN
+   ```
 
-Verifique se python está instalado na sua máquina:
-- `python --version`
+4. Crie um ambiente virtual:
+   ```bash
+   python -m venv venv
+   ```
 
-Entre no diretório que clonou o repositório:
-- `cd <caminho do diretório>`
+5. Ative o ambiente virtual:
+   - Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - Linux/Mac:
+     ```bash
+     source venv/bin/activate
+     ```
 
-Crie um ambiente virutal:
-- `python -m venv venv`
+6. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Ative o ambiente virtual:
-- **windows:** - `venv\Scripts\activate`
-- **linux/mac:** - `source venv/bin/activate`
+7. Crie o banco de dados:
+   ```bash
+   python manage.py migrate
+   ```
 
-Instale as dependências: 
-- `pip install -r requirements.txt` 
+8. (Opcional) Crie um superusuário:
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-Crie o banco de dados:
-- `python manage.py migrate`
+9. Inicie o servidor:
+   ```bash
+   python manage.py runserver
+   ```
 
-(Opcional) Crie um superusuário:
-- `python manage.py createsuperuser`
+Agora você está pronto para começar a desenvolver para o ProjIFRN!
 
-Inicie o servidor: 
-- `python manage.py runserver`
+
