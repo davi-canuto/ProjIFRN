@@ -59,17 +59,17 @@
 
 **1. Objetivo do Projeto**
 
-O ProjIFRN tem como objetivo principal disponibilizar uma plataforma web para a comunidade acadêmica do curso de TADS (Tecnologia em Análise e Desenvolvimento de Sistemas) do Instituto Federal do Rio Grande do Norte (IFRN). Essa plataforma será destinada aos discentes e docentes do curso, com o propósito de permitir a postagem e divulgação de projetos de desenvolvimento web desenvolvidos pelos discentes do curso e supervisionados e orientados pelos docentes do curso, relacionados às disciplinas de Projeto de Desenvolvimento de Sistemas Web, Projeto de Desenvolvimento de Sistemas Distribuídos e Projeto de Desenvolvimento de Sistemas Corporativos. Os projetos desenvolvidos e postados na plataforma ProjIFRN abordarão assuntos e temas diversos, proporcionando um espaço flexível e aberto para a exploração de uma ampla gama de trabalhos já realizados e em andamento pelos alunos do curso, todos relacionados ao desenvolvimento de sistemas web.
+O ProjIFRN tem como objetivo principal disponibilizar uma plataforma web institucional para a comunidade acadêmica do curso de TADS (Tecnologia em Análise e Desenvolvimento de Sistemas) do Instituto Federal do Rio Grande do Norte (IFRN). Essa plataforma será destinada aos discentes e docentes do curso, com o propósito de permitir a postagem e divulgação de projetos de desenvolvimento web desenvolvidos pelos discentes do curso e supervisionados e orientados pelos docentes do curso, relacionados às disciplinas de Projeto de Desenvolvimento de Sistemas Web, Projeto de Desenvolvimento de Sistemas Distribuídos e Projeto de Desenvolvimento de Sistemas Corporativos. Os projetos desenvolvidos e postados na plataforma ProjIFRN abordarão assuntos e temas diversos, proporcionando um espaço flexível e aberto para a exploração de uma ampla gama de trabalhos já realizados e em andamento pelos alunos do curso, todos relacionados ao desenvolvimento de sistemas web.
 
 **2. Descrição do Problema**
 
-O curso de TADS enfrenta um desafio crítico relacionado à ausência de uma plataforma web dedicada para postagens, divulgação e gerenciamento de projetos desenvolvidos pelos discentes durante as disciplinas de desenvolvimento de projetos do curso. Essa lacuna tem um impacto significativo na falta de visibilidade para a comunidade acadêmica interessada, incluindo discentes, docentes e público externo. A falta de um sistema centralizado dificulta a divulgação eficaz e a gestão adequada desses projetos, resultando em uma perda de oportunidades de colaboração e compartilhamento de conhecimento.
+O curso de TADS enfrenta um desafio crítico relacionado à ausência de uma plataforma web institucional dedicada para postagens, divulgação e gerenciamento de projetos desenvolvidos no referido curso pelos discentes durante as disciplinas de desenvolvimento de projetos. Essa lacuna tem um impacto significativo na falta de visibilidade para a comunidade acadêmica interessada, incluindo discentes, docentes e público externo. A falta de um sistema centralizado dificulta a divulgação eficaz e a gestão adequada desses projetos, resultando em uma perda de oportunidades de colaboração e compartilhamento de conhecimento.
 
 <table>
   <tr>
    <td><strong>Problema</strong>
    </td>
-   <td>Ausência de uma plataforma web dedicada para postagens, divulgação e gerenciamento de projetos desenvolvidos por discentes.
+   <td>Ausência de uma plataforma web institucional dedicada para postagens, divulgação e gerenciamento de projetos desenvolvidos por discentes.
    </td>
   </tr>
   <tr>
@@ -87,7 +87,7 @@ O curso de TADS enfrenta um desafio crítico relacionado à ausência de uma pla
   <tr>
    <td><strong>Solução</strong>
    </td>
-   <td>Desenvolvimento de uma plataforma dedicada para postagens, divulgação e gerenciamento de projetos de desenvolvimento de sistemas.
+   <td>Desenvolvimento de uma plataforma gerenciamento de projetos da disciplina de Projeto de Desenvolvimento de Sistema em suas três fases: web, distribuido e corporativo. Sendo também integrada com o SUAP para que o docente e discente utilize a plataforma.
    </td>
   </tr>
 </table>
@@ -174,7 +174,7 @@ Essa singularidade posiciona a ProjIFRN como uma solução inovadora e sob medid
 
 **7. Visão Geral do Produto**
 
-O ProjIFRN é uma plataforma web, em desenvolvimento, sob medida para atender às necessidades da vibrante comunidade acadêmica do curso de TADS no IFRN. Este produto visa simplificar e aprimorar a gestão de projetos acadêmicos; desenvolvimento de sistemas web, permitindo que orientadores e discentes compartilhem informações detalhadas e relevantes sobre seus projetos.
+O ProjIFRN é uma plataforma web institucional, em desenvolvimento, sob medida para atender às necessidades da vibrante comunidade acadêmica do curso de TADS no IFRN. Este produto visa simplificar e aprimorar a gestão de projetos acadêmicos; desenvolvimento de sistemas web, permitindo que orientadores e discentes compartilhem informações detalhadas e relevantes sobre seus projetos.
 Com uma abordagem centrada no usuário, o ProjIFRN oferece uma experiência intuitiva e eficiente. Os orientadores terão a capacidade de realizar o upload de informações detalhadas sobre projetos, proporcionando uma apresentação objetiva e informativa para o público acadêmico e externo interessado. Isso não apenas simplifica a divulgação de projetos, mas também promove a colaboração, permitindo que outros discentes e docentes se envolvam e se inspirem por meio de projetos já realizados ou em andamento.
 A plataforma será dotada de uma interface de fácil navegação, garantindo que todos os usuários tenham acesso rápido e confiável às informações desejadas. Isso tornará a exploração e o compartilhamento de projetos uma tarefa simples e agradável, incentivando a disseminação do conhecimento e o fortalecimento da comunidade acadêmica de TADS no IFRN.
 
@@ -194,7 +194,7 @@ A plataforma será dotada de uma interface de fácil navegação, garantindo que
   <tr>
    <td>F01
    </td>
-   <td>Pesquisar Projeto
+   <td>Pesquisa de Projetos
    </td>
    <td>Listar projetos de acordo com critérios de busca
    </td>
@@ -204,7 +204,7 @@ A plataforma será dotada de uma interface de fácil navegação, garantindo que
   <tr>
    <td>F02
    </td>
-   <td>Acessar Projeto
+   <td>Acesso ao detalhamento do projeto
    </td>
    <td>Visualizar detalhes de um projeto
    </td>
@@ -214,9 +214,9 @@ A plataforma será dotada de uma interface de fácil navegação, garantindo que
    <tr>
    <td>F03
    </td>
-   <td>Criar projeto
+   <td>Criação de um projeto
    </td>
-   <td>Criar um novo projeto
+   <td>Criar um novo projeto 
    </td>
    <td>Necessário
    </td>
@@ -224,9 +224,9 @@ A plataforma será dotada de uma interface de fácil navegação, garantindo que
   <tr>
    <td>F04
    </td>
-   <td>Gerenciar Projeto
+   <td>Gestão de um Projeto existente
    </td>
-   <td>Editar projetos
+   <td>Deletar e atualizar um projeto que criou ou faz parte
    </td>
    <td>Necessário
    </td>
@@ -234,9 +234,9 @@ A plataforma será dotada de uma interface de fácil navegação, garantindo que
   <tr>
    <td>F05
    </td>
-   <td>Definir Equipe
+   <td>Definição de membros
    </td>
-   <td>Definir membros da equipe de projeto
+   <td>Definir membros de uma equipe para um projeto
    </td>
    <td>Necessário
    </td>
@@ -244,9 +244,9 @@ A plataforma será dotada de uma interface de fácil navegação, garantindo que
   <tr>
    <td>F06
    </td>
-   <td>Alterar Status
+   <td>Alteração de status
    </td>
-   <td>define o estado que o projeto está
+   <td>Definir em que etapa um pds está
    </td>
    <td>Necessário
    </td>
