@@ -12,7 +12,7 @@ defineProps({
         <h1 :class=title_gradient>{{data}}</h1>
         <h2>{{title}}</h2>
         <p>{{description}}</p>
-    </article>
+    </article>   
 </template>
 
 
