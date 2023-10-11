@@ -59,12 +59,11 @@ p{
 }
 
 .purple  {
-  background-image: linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
+  background-image: 
 }
 .green{
-  background-image: linear-gradient(93deg, #2AF598 -29.31%, #08AEEA 106.47%); 
+  background-image: ; 
 }
 .red{
-  background-image: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%); 
 }
 </style>

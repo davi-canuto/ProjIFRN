@@ -1,40 +1,17 @@
 <script setup>
 import ExploreCard from './components/cards/ExploreCard.vue';
-
+import Search from './components/header/Search.vue';
 </script>
 
 <template>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <Header>
+    <a href="#">
+      <img src="./assets/imgs/logotipo.svg" alt="projIFRN">
+    </a>
+    <Search />
+  </Header>
 
-        <a class="navbar-brand" href="#">
-          <img src="./assets/logotipo.svg">
-        </a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-
-          <form class="navbar-nav me-auto mb-2 mb-lg-0" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-          <ul class="d-flex navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <section>
+  <!-- <section>
     <h1 class="title-section"> Explore nossa coleção de projetos </h1>
     <div class="cards">
       <ExploreCard :data=22 title="Em Desenvolvimento"
@@ -50,10 +27,29 @@ import ExploreCard from './components/cards/ExploreCard.vue';
         title_gradient="red" />
     </div>
 
-  </section>
+  </section> -->
 </template>
 
 <style>
+:root{
+  --AzulAco :#777E90;
+  --AzulArdosia:#4A5568;
+  --AzulEletrico: #408CFF;
+  --AzulMarinhoEscuro:#131740;
+  --BrancoFosco:#F5F7FA;
+  --CinzaAzulado: #93989A;
+  --GradientVerde:linear-gradient(93deg, #2AF598 -29.31%, #08AEEA 106.47%);
+  --GradientVermelho: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%); ;
+  --GradienteRoxo:linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
+  --NeutrosClarosBranco:#FFFFFF;
+  --VerdeEsmeralda:#00BF63;  
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
 /* section {
   display: flex;
   flex-direction: column;
