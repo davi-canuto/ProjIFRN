@@ -1,0 +1,64 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/projects":
+    get:
+      summary: list projects
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                model:
+                  type: string
+              required:
+              - name
+              - model
+  "/projects/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show project
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update project
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update project
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete project
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

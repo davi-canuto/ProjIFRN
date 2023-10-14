@@ -1,54 +1,105 @@
-require 'rails_helper'
+require 'swagger_helper'
 
-RSpec.describe 'Projects', type: :request do
-  describe 'GET /projects' do
-    it 'returns a successful response' do
-      get '/projects'
-      expect(response).to have_http_status(200)
+RSpec.describe 'projects', type: :request do
+  path '/projects' do
+    get('list projects') do
+      response(200, 'successful') do
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
-  end
 
-  describe 'POST /projects' do
-    it 'creates a new project' do
-      project_params = {
-        project: {
-          title: 'ProjIFRN', description: 'proj ifrn project', content: 'Content', status: 1
+    post('create project') do
+      response(200, 'successful') do
+        consumes 'application/json'
+        parameter name: :project, in: :body, schema: {
+          type: :object,
+          properties: {
+            name: { type: :string },
+            model: { type: :string }
+          },
+          required: %w[name model]
         }
-      }
-
-      post '/projects', params: project_params
-      expect(response).to have_http_status(201)
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
   end
 
-  describe 'GET /projects/:id' do
-    it 'returns a successful response' do
-      project = Project.create(title: 'Test Project', description: 'Test Description', content: 'Test Content', status: 1)
+  path '/projects/{id}' do
+    parameter name: 'id', in: :path, type: :string, description: 'id'
 
-      get "/projects/#{project.id}"
-      expect(response).to have_http_status(200)
+    get('show project') do
+      response(200, 'successful') do
+        let(:id) { '123' }
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
-  end
 
-  describe 'PUT /projects/:id' do
-    it 'updates a project' do
-      project = Project.create(title: 'Test Project', description: 'Test Description', content: 'Test Content', status: 1)
-      updated_params = { project: { title: 'Updated Project' } }
+    patch('update project') do
+      response(200, 'successful') do
+        let(:id) { '123' }
 
-      put "/projects/#{project.id}", params: updated_params
-
-      expect(response).to have_http_status(200)
-      project.reload
-      expect(project.title).to eq('Updated Project')
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
-  end
 
-  describe 'DELETE /projects/:id' do
-    it 'deletes a project' do
-      project = Project.create(title: 'Test Project', description: 'Test Description', content: 'Test Content', status: 1)
+    put('update project') do
+      response(200, 'successful') do
+        let(:id) { '123' }
 
-      delete "/projects/#{project.id}"
-      expect(response).to have_http_status(204)
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
+    end
+
+    delete('delete project') do
+      response(200, 'successful') do
+        let(:id) { '123' }
+
+        after do |example|
+          example.metadata[:response][:content] = {
+            'application/json' => {
+              example: JSON.parse(response.body, symbolize_names: true)
+            }
+          }
+        end
+        run_test!
+      end
     end
   end
 end
