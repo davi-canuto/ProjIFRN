@@ -11,7 +11,7 @@ paths:
         '200':
           description: successful
     post:
-      summary: create car
+      summary: create project
       parameters: []
       responses:
         '200':
@@ -24,11 +24,17 @@ paths:
               properties:
                 name:
                   type: string
-                model:
+                description:
                   type: string
+                content:
+                  type: string
+                status:
+                  type: integer
               required:
               - name
-              - model
+              - description
+              - content
+              - status
   "/projects/{id}":
     parameters:
     - name: id
@@ -42,20 +48,35 @@ paths:
       responses:
         '200':
           description: successful
-    patch:
-      summary: update project
-      responses:
-        '200':
-          description: successful
     put:
       summary: update project
+      parameters: []
       responses:
         '200':
           description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                content:
+                  type: string
+                status:
+                  type: integer
+              required:
+              - name
+              - description
+              - content
+              - status
     delete:
       summary: delete project
       responses:
-        '200':
+        '204':
           description: successful
 servers:
 - url: https://{defaultHost}

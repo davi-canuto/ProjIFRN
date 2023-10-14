@@ -4,6 +4,7 @@ RSpec.describe 'projects', type: :request do
   path '/projects' do
     get('list projects') do
       response(200, 'successful') do
+        let(:projects) { create_list(:project, 5) }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -23,10 +24,14 @@ RSpec.describe 'projects', type: :request do
           type: :object,
           properties: {
             name: { type: :string },
-            model: { type: :string }
+            description: { type: :string },
+            content: { type: :string },
+            status: { type: :integer }
           },
-          required: %w[name model]
+          required: %w[name description content status]
         }
+        let(:project) { attributes_for(:project) }
+
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -44,22 +49,9 @@ RSpec.describe 'projects', type: :request do
 
     get('show project') do
       response(200, 'successful') do
-        let(:id) { '123' }
+        let(:project) { create(:project) }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-
-    patch('update project') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+        let(:id) { project.id }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -74,7 +66,20 @@ RSpec.describe 'projects', type: :request do
 
     put('update project') do
       response(200, 'successful') do
-        let(:id) { '123' }
+        consumes 'application/json'
+        parameter name: :project, in: :body, schema: {
+          type: :object,
+          properties: {
+            name: { type: :string },
+            description: { type: :string },
+            content: { type: :string },
+            status: { type: :integer }
+          },
+          required: %w[name description content status]
+        }
+        let(:project) { create(:project) }
+
+        let(:id) { project.id }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -88,8 +93,10 @@ RSpec.describe 'projects', type: :request do
     end
 
     delete('delete project') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+      response(204, 'successful') do
+        let(:project) { create(:project) }
+
+        let(:id) { project.id }
 
         after do |example|
           example.metadata[:response][:content] = {
