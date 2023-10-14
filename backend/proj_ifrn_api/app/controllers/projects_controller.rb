@@ -3,17 +3,17 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    render json: @projects.serialized
+    render json: @projects.serialized.as_json
   end
 
   def show
-    render json: @project.serialized
+    render json: @project.serialized.as_json
   end
 
   def create
     @project = Project.new(project_params)
     if @project.save
-      render json: @project.serialized, status: :created
+      render json: @project.serialized.as_json, status: :created
     else
       render json: @project.errors, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      render json: @project.serialized
+      render json: @project.serialized.as_json
     else
       render json: @project.errors, status: :unprocessable_entity
     end
