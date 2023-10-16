@@ -5,7 +5,8 @@ Este é o frontend da plataforma projIFRN desenvolvido em Vue.js
 ##### Pré-requisitos:
 
 * Node.js
-* Vue CLI
+* Vue CLI: 
+  `npm install -g @vue/cli`
 
 ##### Instalação
 
