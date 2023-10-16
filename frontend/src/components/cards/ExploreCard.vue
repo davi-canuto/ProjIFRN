@@ -59,11 +59,12 @@ p{
 }
 
 .purple  {
-  background-image: 
+  background-image: var(--GradienteRoxo)
 }
 .green{
-  background-image: ; 
+  background-image: var(--GradientVerde); 
 }
 .red{
+  background-image: var(--GradientVermelho);
 }
 </style>
