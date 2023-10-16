@@ -1,37 +1,27 @@
 <script setup>
-import Search from './components/header/Search.vue';
+import HeaderBar from './components/header/HeaderBar.vue';
 </script>
 
 <template>
-  <Header>
-    <a href="#">
-      <img src="./assets/imgs/logotipo.svg" alt="projIFRN">
-    </a>
-    <Search />
-  </Header>
+  <HeaderBar />
 
   <router-view></router-view>
-
 </template>
 
 <style>
-:root{
-  --AzulAco :#777E90;
-  --AzulArdosia:#4A5568;
+:root {
+  --AzulAco: #777E90;
+  --AzulArdosia: #4A5568;
   --AzulEletrico: #408CFF;
-  --AzulMarinhoEscuro:#131740;
-  --BrancoFosco:#F5F7FA;
+  --AzulMarinhoEscuro: #131740;
+  --BrancoFosco: #F5F7FA;
   --CinzaAzulado: #93989A;
-  --GradientVerde:linear-gradient(93deg, #2AF598 -29.31%, #08AEEA 106.47%);
-  --GradientVermelho: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%); ;
-  --GradienteRoxo:linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
-  --NeutrosClarosBranco:#FFFFFF;
-  --VerdeEsmeralda:#00BF63;  
-}
-
-header {
-  display: flex;
-  align-items: center;
+  --GradientVerde: linear-gradient(93deg, #2AF598 -29.31%, #08AEEA 106.47%);
+  --GradientVermelho: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%);
+  ;
+  --GradienteRoxo: linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
+  --NeutrosClarosBranco: #FFFFFF;
+  --VerdeEsmeralda: #00BF63;
 }
 </style>
 

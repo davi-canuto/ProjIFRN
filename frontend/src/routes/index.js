@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import HomaPage from '../pages/HomePage.vue'
+import HomePage from '../pages/HomePage.vue'
 
  
 const router = createRouter({
@@ -8,7 +8,7 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: HomaPage
+            component: HomePage
         },
        ] 
 });

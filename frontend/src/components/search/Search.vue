@@ -43,7 +43,7 @@ defineProps({})
     border: 1px solid rgba(0, 0, 0, 0.30);
 }
 .icon{
-    right: 16px;
+    margin-right: 16px;
     position: absolute;
 }
 </style>
