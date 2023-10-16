@@ -35,6 +35,10 @@ defineProps({})
     font-weight: 500;
     font-style: normal;
     line-height: normal;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     color: var(--CinzaAzulado);
 }

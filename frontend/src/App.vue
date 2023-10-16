@@ -18,10 +18,36 @@ import HeaderBar from './components/header/HeaderBar.vue';
   --CinzaAzulado: #93989A;
   --GradientVerde: linear-gradient(93deg, #2AF598 -29.31%, #08AEEA 106.47%);
   --GradientVermelho: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%);
-  ;
   --GradienteRoxo: linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
   --NeutrosClarosBranco: #FFFFFF;
   --VerdeEsmeralda: #00BF63;
+}
+
+body{
+  color: var(--Azul-Marinho-Escuro);
+}
+
+.default-padding {
+  padding: 40px 245px;
+}
+
+@media (max-width:1475px) {
+  .default-padding {
+    padding: 40px 122px;
+  }
+}
+
+@media (max-width:1150px) {
+  .default-padding {
+    padding: 40px 61.25px;
+  }
+}
+
+@media (max-width:750px) {
+  .default-padding {
+    padding: 40px 19px;
+  }
+
 }
 </style>
 

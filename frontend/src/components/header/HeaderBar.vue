@@ -5,69 +5,113 @@ defineProps({})
 </script>
 
 <template>
-    <header>
-        <div class="bar_left">
+    <header class="default-padding">
+        <div class="navbar_left">
             <a href="#">
                 <img src="../../assets/imgs/logotipo.svg" alt="projIFRN">
             </a>
 
-            <Search />
+            <Search class="searchbar" />
         </div>
 
-        <div class="bar_right">
-            <ul>
-                <li>
+        <ul class="navbar_right">
+            <a href="#">
+                <li class="navbar_link">
                     Explorar projetos
                 </li>
-                <li>
-                    Explorar projetos
+            </a>
+
+            <a href="#">
+                <li class="navbar_link">
+                    Entrar
                 </li>
-            </ul>
-        </div>
+            </a>
+        </ul>
+
+        <img class="menu_btn" src="../../assets/icons/menu.svg">
     </header>
 </template>
 
 
 
 <style scoped>
+a {
+    text-decoration: none;
+    color: initial;
+}
+
 header {
     display: flex;
     align-items: center;
-    padding: 40px 245px;
+    gap: 20%;
 }
 
-
-
-.bar_left {
+.navbar_left {
     display: flex;
     gap: 97px;
     align-items: center;
     width: 100%;
+    height: 3.4em;
 }
 
+.navbar_right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
 
+ul {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 
+li {
+    width: max-content;
+}
+
+.menu_btn {
+    display: none;
+}
+
+.navbar_link{
+    font-weight: 700;
+}
 
 @media (max-width:1475px) {
-    header {
-        padding: 40px 122px;
-    }
-
     .bar_left {
         display: flex;
-        gap: 97px;
+        gap: 65px;
     }
 }
 
 @media (max-width:1150px) {
     header {
-        padding: 40px 61.25px;
+        display: flex;
+        align-items: center;
+        gap: 10%;
     }
 }
 
-@media (max-width:750px) {
+@media (max-width:900px) {
     header {
-        padding: 40px 19px;
+        display: flex;
+        align-items: center;
+        gap: 5%;
+    }
+
+    .navbar_right {
+        display: none;
+    }
+
+    .searchbar {
+        display: none;
+    }
+
+    .menu_btn {
+        display: flex;
     }
 
 }
