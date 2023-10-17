@@ -67,4 +67,6 @@ import ExploreCard from '../../components/cards/ExploreCard.vue';
 
 
 }
+
+
 </style>

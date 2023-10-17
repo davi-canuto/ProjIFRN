@@ -25,6 +25,9 @@ defineProps({
 
             <ProjectCard title="StockWeb+" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
                 leader="André Silva" startdate="04-2019" />
+
+            <ProjectCard title="StockWeb+" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
+                leader="André Silva" startdate="04-2019" />
         </div>
     </section>
 </template>
@@ -63,8 +66,23 @@ a {
 }
 
 .content {
-    display: flex;
-    justify-content: space-between;
+    overflow-x: auto;
+    width: 100%;
+    display: inline-grid;
+    justify-content: start;
+    grid-auto-flow: column;
+    padding: 1em;
+    gap: 2em;
+}
+
+.content::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 4em;
 }
 
 @media (max-width:1190px) {
@@ -83,7 +101,17 @@ a {
         background: var(--Verde-Esmeralda, #00BF63);
         padding: 12px 20px;
         color: var(--NeutrosClarosBranco);
+    }
+}
 
+@media (max-width:990px) {
+    .section {
+        gap: 47px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
     }
 }
 </style>

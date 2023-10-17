@@ -48,7 +48,7 @@ defineProps({
     border-radius: 6.83px;
     background: var(--NeutrosClarosBranco);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 322px;
+    width: 320px;
 }
 
 .project-div .wallpaper {
@@ -157,5 +157,14 @@ defineProps({
     color: var(--VerdeEsmeralda);
 }
 
+@media (max-width:990px) {
+    .wallpaper {
+        display: none;
+    }
 
-@media (max-width:1190px) {}</style>
+    .project-div {
+        width: 100%;
+        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+</style>
