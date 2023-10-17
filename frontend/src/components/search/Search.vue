@@ -40,6 +40,7 @@ defineProps({})
     text-overflow: ellipsis;
     white-space: nowrap;
 
+    background: var(--BrancoFosco);
     color: var(--CinzaAzulado);
 }
 .search:focus {

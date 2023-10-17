@@ -24,7 +24,8 @@ import HeaderBar from './components/header/HeaderBar.vue';
 }
 
 body{
-  color: var(--Azul-Marinho-Escuro);
+  color: var(--AzulMarinhoEscuro) !important;
+  background: var(--BrancoFosco) !important;
 }
 
 .default-padding {

@@ -26,7 +26,7 @@ defineProps({
   align-items: center;
 
   border-radius: 20px;
-  background: var(--neutros-white);
+  background: var(--NeutrosClarosBranco);
   box-shadow: 0px 8px 12px 0px rgb(0 0 0 / 9%);
   border: none;
 
