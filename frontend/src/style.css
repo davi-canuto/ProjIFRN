@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
 
 :root{
-  --AzulAco :#777E90;
+  --AzulAco :#777e90;
   --AzulArdosia:#4A5568;
   --AzulEletrico: #408CFF;
   --AzulMarinhoEscuro:#131740;
@@ -11,6 +11,7 @@
   --GradientVermelho: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%); ;
   --GradienteRoxo:linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
   --NeutrosClarosBranco:#FFFFFF;
+  --PretoProfundo:#1B1B1B;
   --VerdeEsmeralda:#00BF63;  
 }
 * {
@@ -23,4 +24,11 @@ body {
   background-color: var(--BrancoFosco);
   font-family: 'Plus Jakarta Sans', sans-serif!important;
   color: var(--Azul-Marinho-Escuro);
+}
+
+a{
+  text-decoration: none!important;
+}
+ul{
+  list-style: none;
 }
