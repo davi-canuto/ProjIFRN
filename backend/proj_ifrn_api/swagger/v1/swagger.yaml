@@ -10,12 +10,32 @@ paths:
       responses:
         '200':
           description: successful
+          content:
+            application/json:
+              example: []
     post:
       summary: create project
       parameters: []
       responses:
-        '200':
-          description: successful
+        '201':
+          description: created
+          content:
+            application/json:
+              example:
+                id: 1
+                created_at: '2023-10-22T12:23:56.815Z'
+                updated_at: '2023-10-22T12:23:56.815Z'
+                title: ProjIFRN Title
+                description: ProjIFRN description project
+                content: content
+                status: in_progress
+                name: ProjIFRN
+                external_url: htts://
+                short_description: ProjIFRN short description
+                keywords: corporative
+                start_at: '2023-09-22T12:23:56.799Z'
+                end_at: '2023-11-22T12:23:56.800Z'
+                phase: distributed
       requestBody:
         content:
           application/json:
@@ -24,17 +44,26 @@ paths:
               properties:
                 name:
                   type: string
+                title:
+                  type: string
                 description:
                   type: string
                 content:
                   type: string
                 status:
                   type: integer
-              required:
-              - name
-              - description
-              - content
-              - status
+                external_url:
+                  type: string
+                short_description:
+                  type: string
+                keywords:
+                  type: string
+                star_at:
+                  type: datetime
+                end_at:
+                  type: datetime
+                phase:
+                  type: integer
   "/projects/{id}":
     parameters:
     - name: id
@@ -48,12 +77,46 @@ paths:
       responses:
         '200':
           description: successful
+          content:
+            application/json:
+              example:
+                id: 1
+                created_at: '2023-10-22T12:23:56.821Z'
+                updated_at: '2023-10-22T12:23:56.821Z'
+                title: ProjIFRN Title
+                description: ProjIFRN description project
+                content: content
+                status: in_progress
+                name: ProjIFRN
+                external_url: htts://
+                short_description: ProjIFRN short description
+                keywords: corporative
+                start_at: '2023-09-22T12:23:56.821Z'
+                end_at: '2023-11-22T12:23:56.821Z'
+                phase: distributed
     put:
       summary: update project
       parameters: []
       responses:
         '200':
           description: successful
+          content:
+            application/json:
+              example:
+                id: 1
+                created_at: '2023-10-22T12:23:56.828Z'
+                updated_at: '2023-10-22T12:23:56.832Z'
+                title: ProjIFRN Title
+                description: ProjIFRN description project
+                content: content
+                status: in_progress
+                name: ProjIFRN
+                external_url: htts://
+                short_description: ProjIFRN short description
+                keywords: corporative
+                start_at: '2023-09-22T12:23:56.828Z'
+                end_at: '2023-11-22T12:23:56.828Z'
+                phase: distributed
       requestBody:
         content:
           application/json:
@@ -62,17 +125,24 @@ paths:
               properties:
                 name:
                   type: string
+                title:
+                  type: string
                 description:
                   type: string
                 content:
                   type: string
                 status:
                   type: integer
-              required:
-              - name
-              - description
-              - content
-              - status
+                external_url:
+                  type: string
+                short_description:
+                  type: string
+                keywords:
+                  type: string
+                star_at:
+                  type: datetime
+                end_at:
+                  type: datetime
     delete:
       summary: delete project
       responses:

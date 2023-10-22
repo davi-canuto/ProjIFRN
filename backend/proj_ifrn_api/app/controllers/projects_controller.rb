@@ -28,8 +28,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
-    head :no_content
+    if @project.destroy
+      render json: @project.serialized.as_json, status: :no_content
+    else
+      render json: @project.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -39,6 +42,9 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :content, :status)
+    params.require(:project).permit(
+      :title, :description, :content, :status, :name, :external_url,
+      :short_description, :keywords, :start_at, :end_at, :phase
+    )
   end
 end

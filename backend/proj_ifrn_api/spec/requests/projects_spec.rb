@@ -18,19 +18,25 @@ RSpec.describe 'projects', type: :request do
     end
 
     post('create project') do
-      response(200, 'successful') do
+      response(201, 'created') do
         consumes 'application/json'
         parameter name: :project, in: :body, schema: {
           type: :object,
           properties: {
             name: { type: :string },
+            title: { type: :string },
             description: { type: :string },
             content: { type: :string },
-            status: { type: :integer }
-          },
-          required: %w[name description content status]
+            status: { type: :integer },
+            external_url: { type: :string },
+            short_description: { type: :string },
+            keywords: { type: :string },
+            star_at: { type: :datetime },
+            end_at: { type: :datetime },
+            phase: { type: :integer }
+          }
         }
-        let(:project) { attributes_for(:project) }
+        let(:project) { FactoryBot.attributes_for(:project) }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -49,7 +55,7 @@ RSpec.describe 'projects', type: :request do
 
     get('show project') do
       response(200, 'successful') do
-        let(:project) { create(:project) }
+        let(:project) { FactoryBot.create(:project) }
 
         let(:id) { project.id }
 
@@ -71,13 +77,18 @@ RSpec.describe 'projects', type: :request do
           type: :object,
           properties: {
             name: { type: :string },
+            title: { type: :string },
             description: { type: :string },
             content: { type: :string },
-            status: { type: :integer }
-          },
-          required: %w[name description content status]
+            status: { type: :integer },
+            external_url: { type: :string },
+            short_description: { type: :string },
+            keywords: { type: :string },
+            star_at: { type: :datetime },
+            end_at: { type: :datetime },
+          }
         }
-        let(:project) { create(:project) }
+        let(:project) { FactoryBot.create(:project) }
 
         let(:id) { project.id }
 
@@ -94,17 +105,10 @@ RSpec.describe 'projects', type: :request do
 
     delete('delete project') do
       response(204, 'successful') do
-        let(:project) { create(:project) }
+        let(:project) { FactoryBot.create(:project) }
 
         let(:id) { project.id }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
         run_test!
       end
     end
