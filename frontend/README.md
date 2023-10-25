@@ -1,7 +1,26 @@
-# Vue 3 + Vite
+# **Frontend - PROJIFRN**
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este é o frontend da plataforma projIFRN desenvolvido em Vue.js
 
-## Recommended IDE Setup
+##### Pré-requisitos:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+* Node.js
+* Vue CLI: 
+  `npm install -g @vue/cli`
+
+##### Instalação
+
+Instale as dependências do projeto.
+
+```
+npm install
+```
+
+para executar rode o seguinte comando:
+
+```
+npm run dev
+```
+
+A aplicação será aberta no navegador na porta 5173.
+
