@@ -4,7 +4,7 @@ defineProps({
     description: String,
     step: String,
     leader: String,
-    startdate: Date,
+    thumbnail: String
 })
 
 </script>
@@ -30,7 +30,7 @@ defineProps({
         </div>
         <div class="footer">
             <div class="details">
-                <h2>Desde {{ startdate }}</h2>
+                <!-- <h2>Desde {{ startdate }}</h2> -->
                 <p>mais detalhes</p>
             </div>
             <img src="../../assets/icons/go.svg">

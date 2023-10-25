@@ -1,10 +1,27 @@
 <script setup>
 import ProjectCard from '../cards/ProjectCard.vue';
-
+import { ref, onMounted } from 'vue';
+import projectsService from "../../services/projectsServices";
 defineProps({
-    title: String
+    title: String,
 })
 
+const projects = ref([]);
+
+const fetchProjects = async () => {
+  try {
+    const response = await projectsService.getProjects();
+    projects.value = response;
+
+} catch (error) {
+    console.error('Erro ao buscar dados da API:', error);
+  }
+};
+const projectsRefs = ref([])
+
+onMounted(() => {
+  fetchProjects();
+});
 </script>
 
 <template>
@@ -15,19 +32,12 @@ defineProps({
                 <p>Ver Todos</p>
             </a>
         </div>
+    
+    <div class="content">
+            <ProjectCard v-for="project in projects" ref="projectsRefs" title="project" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
+                leader="André Silva"  />
 
-        <div class="content">
-            <ProjectCard title="StockWeb+" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
-                leader="André Silva" startdate="04-2019" />
-
-            <ProjectCard title="StockWeb+" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
-                leader="André Silva" startdate="04-2019" />
-
-            <ProjectCard title="StockWeb+" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
-                leader="André Silva" startdate="04-2019" />
-
-            <ProjectCard title="StockWeb+" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
-                leader="André Silva" startdate="04-2019" />
+           
         </div>
     </section>
 </template>
