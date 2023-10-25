@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_10_22_120445) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -21,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_22_120445) do
     t.string "external_url"
     t.string "short_description"
     t.string "name"
-    t.string "keywords"
+    t.string "keywords", array: true
     t.datetime "start_at"
     t.datetime "end_at"
     t.integer "phase"

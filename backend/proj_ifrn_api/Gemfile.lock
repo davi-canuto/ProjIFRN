@@ -130,6 +130,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.4)
     psych (5.1.0)
       stringio
     public_suffix (5.0.3)
@@ -203,7 +204,6 @@ GEM
     rswag-ui (2.11.0)
       actionpack (>= 3.1, < 7.2)
       railties (>= 3.1, < 7.2)
-    sqlite3 (1.6.6-x86_64-linux)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -223,12 +223,12 @@ DEPENDENCIES
   bootsnap
   debug
   factory_bot_rails
+  pg
   puma (~> 5.0)
   rails (~> 7.0.8)
   rspec-rails
   rswag
   rswag-specs
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
