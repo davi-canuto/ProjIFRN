@@ -34,7 +34,8 @@ onMounted(() => {
         </div>
     
     <div class="content">
-            <ProjectCard v-for="project in projects" ref="projectsRefs" title="project" description="Sistema de Gerenciamento de Estoque Online" step="PDS web"
+        
+            <ProjectCard  v-for="project in projects" ref="projectsRefs" :title="project.title" :description="project.description" :step="project.step"
                 leader="André Silva"  />
 
            
