@@ -1,70 +1,96 @@
 <script setup>
 defineProps({
-    data: Number,
-    title: String,
-    description: String,
-    title_gradient: String 
+  data: Number,
+  title: String,
+  description: String,
+  title_gradient: String
 })
 </script>
 
 <template>
-    <article >
-        <h1 :class=title_gradient>{{data}}</h1>
-        <h2>{{title}}</h2>
-        <p>{{description}}</p>
-    </article>
+  <article class="card">
+    <h1 :class=title_gradient>{{ data }}</h1>
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+  </article>
 </template>
 
-
-
 <style scoped>
-article {
+.card {
+  width: 350px;
+
   display: flex;
-  width: 30%;
   padding: 50px 28px;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 
   border-radius: 20px;
-  background-color: #FFF;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
+  background: var(--NeutrosClarosBranco);
+  box-shadow: 0px 8px 12px 0px rgb(0 0 0 / 9%);
+  border: none;
 
   text-align: center;
   font-style: normal;
 }
-h1{
+
+.card h1 {
   font-size: 80px;
   font-weight: 600;
-  line-height: 91px; 
+  line-height: 91px;
 
-  color: black;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
-h2{
-  color: #1B1B1B;
+.card h2 {
   font-size: 26px;
   font-weight: 600;
-  line-height: 54px; 
+  line-height: 36px;
 }
 
-p{
-  font-size: 18px;
+.card p {
+  font-size: 14px;
   font-weight: 500;
-  line-height: 21px; 
-  color: #4A5568; 
+  line-height: 21px;
+
+  color: var(--AzulArdosia);
 }
 
-.purple  {
-  background-image: linear-gradient(93deg, #FE6AB7 3.55%, #9B4AEB 47.23%, #3931F9 97.46%);
+.purple {
+  background-image: var(--GradienteRoxo);
 }
-.green{
-  background-image: linear-gradient(93deg, #2AF598 -29.31%, #08AEEA 106.47%); 
+
+.green {
+  background-image: var(--GradientVerde);
 }
-.red{
-  background-image: linear-gradient(93deg, #FF512F 3.55%, #DD2476 97.46%); 
+
+.red {
+  background-image: var(--GradientVermelho);
+}
+
+@media (max-width:1190px) {
+  .card h1 {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 91px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  .card p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px
+  }
 }
 </style>
